@@ -1,0 +1,10 @@
+node_modules
+.DS_Store
+query-engine*
+
+.env
+
+prisma/*
+!prisma/schema.prisma
+!prisma/seed.ts
+dist/

@@ -1,0 +1,39 @@
+{
+  "name": "graphql-auth",
+  "license": "MIT",
+  "scripts": {
+    "start": "cross-env NODE_ENV=development ts-node-dev --no-notify --respawn --transpileOnly ./src",
+    "build": "cross-env NODE_ENV=production tsc",
+    "seed": "ts-node prisma/seed.ts",
+    "gen:schema": "prisma2 generate",
+    "db:save": "prisma2 lift save",
+    "db:migrate": "prisma2 lift up",
+    "postinstall": "npm run gen:schema"
+  },
+  "dependencies": {
+    "@prisma/nexus": "^0.0.1",
+    "bcrypt": "3.0.6",
+    "dotenv": "^8.0.0",
+    "graphql-shield": "5.3.8",
+    "graphql-yoga": "1.17.4",
+    "jsonwebtoken": "8.5.1",
+    "nexus": "0.11.7"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "3.0.0",
+    "@types/dotenv": "^6.1.1",
+    "@types/jsonwebtoken": "8.3.2",
+    "@types/node": "^12.0.10",
+    "cross-env": "^5.2.0",
+    "prisma2": "^2.0.0-preview-6.1",
+    "ts-node": "^8.3.0",
+    "ts-node-dev": "1.0.0-pre.40",
+    "typescript": "3.5.2",
+    "typesync": "^0.6.1"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  }
+}
