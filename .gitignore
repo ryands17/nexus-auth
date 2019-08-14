@@ -4,7 +4,5 @@ query-engine*
 
 .env
 
-prisma/*
-!prisma/schema.prisma
-!prisma/seed.ts
+*.db
 dist/
