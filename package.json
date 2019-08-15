@@ -2,13 +2,12 @@
   "name": "graphql-auth",
   "license": "MIT",
   "scripts": {
-    "start": "cross-env NODE_ENV=development ts-node-dev --no-notify --respawn --transpileOnly ./src",
+    "dev": "cross-env NODE_ENV=development ts-node-dev --no-notify --respawn --transpileOnly ./src",
     "build": "cross-env NODE_ENV=production tsc",
     "seed": "ts-node prisma/seed.ts",
     "gen:schema": "prisma2 generate",
     "db:save": "prisma2 lift save",
-    "db:migrate": "prisma2 lift up",
-    "postinstall": "npm run gen:schema"
+    "db:migrate": "prisma2 lift up"
   },
   "dependencies": {
     "@prisma/nexus": "^0.0.1",
