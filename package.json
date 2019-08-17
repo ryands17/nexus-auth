@@ -14,7 +14,7 @@
     "@prisma/nexus": "^0.0.1",
     "bcrypt": "3.0.6",
     "dotenv": "^8.0.0",
-    "graphql-shield": "5.3.8",
+    "graphql-shield": "6.0.4",
     "graphql-yoga": "1.18.1",
     "jsonwebtoken": "8.5.1",
     "nexus": "0.11.7"
@@ -23,11 +23,11 @@
     "@types/bcrypt": "3.0.0",
     "@types/dotenv": "^6.1.1",
     "@types/jsonwebtoken": "8.3.3",
-    "@types/node": "^12.7.1",
+    "@types/node": "^12.7.2",
     "cross-env": "^5.2.0",
-    "prisma2": "^2.0.0-preview-6.1",
+    "prisma2": "^2.0.0-preview-7",
     "ts-node": "^8.3.0",
-    "ts-node-dev": "1.0.0-pre.40",
+    "ts-node-dev": "1.0.0-pre.41",
     "typescript": "3.5.3",
     "typesync": "^0.6.1"
   },

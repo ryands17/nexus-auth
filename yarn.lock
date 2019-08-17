@@ -99,10 +99,10 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-12.0.8.tgz#551466be11b2adc3f3d47156758f610bd9f6b1d8"
   integrity sha512-b8bbUOTwzIY3V5vDTY1fIJ+ePKDUBqt2hC2woVGotdQQhG/2Sh62HOKHrT7ab+VerXAcPyAiTEipPu/FsreUtg==
 
-"@types/node@^12.7.1":
-  version "12.7.1"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-12.7.1.tgz#3b5c3a26393c19b400844ac422bd0f631a94d69d"
-  integrity sha512-aK9jxMypeSrhiYofWWBf/T7O+KwaiAHzM4sveCdWPn71lzUSMimRnKzhXDKfKwV1kWoBo2P1aGgaIYGLf9/ljw==
+"@types/node@^12.7.2":
+  version "12.7.2"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-12.7.2.tgz#c4e63af5e8823ce9cc3f0b34f7b998c2171f0c44"
+  integrity sha512-dyYO+f6ihZEtNPDcWNR1fkoTDf3zAK3lAABDze3mz6POyIercH0lEUawUFXlG8xaQZmm1yEBON/4TsYv/laDYg==
 
 "@types/range-parser@*":
   version "1.2.3"
@@ -127,10 +127,10 @@
   resolved "https://registry.yarnpkg.com/@types/strip-json-comments/-/strip-json-comments-0.0.30.tgz#9aa30c04db212a9a0649d6ae6fd50accc40748a1"
   integrity sha512-7NQmHra/JILCd1QqpSzl8+mJRc8ZHz3uDm8YV1Ks9IhK0epEiTw8aIErbvH9PI+6XbqhyIQy3462nEsn7UVzjQ==
 
-"@types/yup@0.26.16":
-  version "0.26.16"
-  resolved "https://registry.yarnpkg.com/@types/yup/-/yup-0.26.16.tgz#75c428236207c48d9f8062dd1495cda8c5485a15"
-  integrity sha512-E2RNc7DSeQ+2EIJ1H3+yFjYu6YiyQBUJ7yNpIxomrYJ3oFizLZ5yDS3T1JTUNBC2OCRkgnhLS0smob5UuCHfNA==
+"@types/yup@0.26.22":
+  version "0.26.22"
+  resolved "https://registry.yarnpkg.com/@types/yup/-/yup-0.26.22.tgz#66da181bfddaf797192f5fc2795583e033568407"
+  integrity sha512-AhUPifCc7j2BEfp+wye3Mj7v3mMhbtu5BbO7n0zpwC/NVSETc8+MHENRmoxjE8wLC8AmFr5+uEhg5cvqusaRFQ==
 
 "@types/zen-observable@^0.5.3":
   version "0.5.4"
@@ -879,12 +879,12 @@ graphql-playground-middleware-lambda@1.7.12:
   dependencies:
     graphql-playground-html "1.6.12"
 
-graphql-shield@5.3.8:
-  version "5.3.8"
-  resolved "https://registry.yarnpkg.com/graphql-shield/-/graphql-shield-5.3.8.tgz#f9e7ad2285f6cfbe20a8a49154ce6c1b184e3893"
-  integrity sha512-33rQ8U5jMurHIapctHk7hBcUg3nxC7fmMIMtyWiomJXhBmztFq/SG7jNaapnL5M7Q/0BmoaSQd3FLSpelP9KPw==
+graphql-shield@6.0.4:
+  version "6.0.4"
+  resolved "https://registry.yarnpkg.com/graphql-shield/-/graphql-shield-6.0.4.tgz#f7c5b4e09ddcf5483ef7e653176b5d67d2a24518"
+  integrity sha512-0atSTooJcIcRv/qqIdhAkD8XPYCuwJqeAzoYwdLUp7LFmsSWK6wmHHmYSPcCscBZMI+8f2T0I8eA6yuv5SAvOA==
   dependencies:
-    "@types/yup" "0.26.16"
+    "@types/yup" "0.26.22"
     lightercollective "^0.3.0"
     object-hash "^1.3.1"
     yup "^0.27.0"
@@ -1575,10 +1575,10 @@ pinkie@^2.0.0:
   resolved "https://registry.yarnpkg.com/pinkie/-/pinkie-2.0.4.tgz#72556b80cfa0d48a974e80e77248e80ed4f7f870"
   integrity sha1-clVrgM+g1IqXToDnckjoDtT3+HA=
 
-prisma2@^2.0.0-preview-6.1:
-  version "2.0.0-preview-6.1"
-  resolved "https://registry.yarnpkg.com/prisma2/-/prisma2-2.0.0-preview-6.1.tgz#528b12cd62e6d2d990a1dc6ba67916444b505f27"
-  integrity sha512-N8q7KqQEhcOrDLExSAm2pG0Haw2gw5RmlkOtq3UekM+ob150k0lyMvLvqHc3VxXfe0eDyid13uM6AMG+cTw4mQ==
+prisma2@^2.0.0-preview-7:
+  version "2.0.0-preview-7"
+  resolved "https://registry.yarnpkg.com/prisma2/-/prisma2-2.0.0-preview-7.tgz#b12e4d3d801099fce96f3719f938e690e19def0a"
+  integrity sha512-wUcFypCfr7pnAeP5V/Tz9REeWCL1XTAKsVXm2cJl/jXj+XdbWxNKLybKFxgCasM91XLSRKLG5EibkIP2lZitVA==
 
 process-nextick-args@~2.0.0:
   version "2.0.0"
@@ -1992,10 +1992,10 @@ ts-invariant@^0.4.0:
   dependencies:
     tslib "^1.9.3"
 
-ts-node-dev@1.0.0-pre.40:
-  version "1.0.0-pre.40"
-  resolved "https://registry.yarnpkg.com/ts-node-dev/-/ts-node-dev-1.0.0-pre.40.tgz#a3a93a6c87993cba8c70c4c92b67d874694b38db"
-  integrity sha512-78CptStf6oA5wKkRXQPEMBR5zowhnw2bvCETRMhkz2DsuussA56s6lKgUX4EiMMiPkyYdSm8jkJ875j4eo4nkQ==
+ts-node-dev@1.0.0-pre.41:
+  version "1.0.0-pre.41"
+  resolved "https://registry.yarnpkg.com/ts-node-dev/-/ts-node-dev-1.0.0-pre.41.tgz#3ae75cea8d2e00bd3c19cf7c75aea9c59a859e30"
+  integrity sha512-fo6dvzpXHgBpMYrgGhhQHsHlgQubcDaemUHkWKy9TRkBT8hz3ooag5DAeIeMdmj1igl4rZ4vyX1WhIjbg+ZFEQ==
   dependencies:
     dateformat "~1.0.4-1.2.3"
     dynamic-dedupe "^0.3.0"
