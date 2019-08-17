@@ -66,6 +66,7 @@ export interface NexusGenFieldTypes {
   Query: { // field return type
     feed: NexusGenRootTypes['Post'][]; // [Post!]!
     filterPosts: NexusGenRootTypes['Post'][]; // [Post!]!
+    info: string; // String!
     me: NexusGenRootTypes['User']; // User!
     post: NexusGenRootTypes['Post'] | null; // Post
   }

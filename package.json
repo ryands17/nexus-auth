@@ -2,6 +2,7 @@
   "name": "graphql-auth",
   "license": "MIT",
   "scripts": {
+    "predev": "npm run gen:schema",
     "dev": "cross-env NODE_ENV=development ts-node-dev --no-notify --respawn --transpileOnly ./src",
     "build": "cross-env NODE_ENV=production tsc",
     "seed": "ts-node prisma/seed.ts",

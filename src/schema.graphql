@@ -29,6 +29,7 @@ type Post {
 type Query {
   feed: [Post!]!
   filterPosts(searchString: String): [Post!]!
+  info: String!
   me: User!
   post(id: ID): Post
 }

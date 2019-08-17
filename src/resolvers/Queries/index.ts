@@ -1,7 +1,14 @@
 import * as User from './User'
 import * as Post from './Post'
+import { queryField } from 'nexus'
+
+const info = queryField('info', {
+  type: 'String',
+  resolve: () => 'API is functional!',
+})
 
 export const Query = {
+  info,
   ...User,
   ...Post,
 }
