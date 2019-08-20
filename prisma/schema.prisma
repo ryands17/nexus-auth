@@ -1,7 +1,14 @@
 datasource db {
   provider = "sqlite"
   url      = "file:dev.db"
+  enabled  = false
+}
+
+datasource pg {
+  provider = "postgresql"
+  url      = env("POSTGRESQL_URL")
   default  = true
+  enabled  = true
 }
 
 generator photon {
