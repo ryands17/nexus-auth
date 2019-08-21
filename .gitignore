@@ -6,3 +6,4 @@ query-engine*
 
 *.db
 dist/
+schema.graphql

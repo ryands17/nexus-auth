@@ -108,15 +108,6 @@ export interface NexusGenArgTypes {
       id?: string | null; // ID
     }
   }
-  User: {
-    posts: { // args
-      after?: string | null; // String
-      before?: string | null; // String
-      first?: number | null; // Int
-      last?: number | null; // Int
-      skip?: number | null; // Int
-    }
-  }
 }
 
 export interface NexusGenAbstractResolveReturnTypes {

@@ -9,6 +9,7 @@ import * as path from 'path'
 import * as allTypes from './resolvers'
 import { Context } from './types'
 import { isDev } from './utils'
+import { permissions } from './permissions'
 
 const PORT = process.env.PORT || 4002
 
@@ -43,7 +44,7 @@ const schema = makeSchema({
 
 const server = new GraphQLServer({
   schema,
-  // middlewares: [permissions], // TODO: Fix after https://github.com/maticzav/graphql-shield/issues/361
+  middlewares: [permissions],
   context: (request: any) => {
     return {
       ...request,

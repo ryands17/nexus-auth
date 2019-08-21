@@ -4,6 +4,12 @@ datasource db {
   default  = true
 }
 
+// datasource pg {
+//   provider = "postgresql"
+//   url      = env("POSTGRESQL_URL")
+//   enabled  = false
+// }
+
 generator photon {
   provider = "photonjs"
 }
