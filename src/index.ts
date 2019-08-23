@@ -7,6 +7,7 @@ import { makeSchema } from '@prisma/nexus'
 import { GraphQLServer } from 'graphql-yoga'
 import * as path from 'path'
 import * as allTypes from './resolvers'
+import * as helmet from 'helmet'
 import { Context } from './types'
 import { isDev } from './utils'
 import { permissions } from './permissions'
@@ -52,6 +53,8 @@ const server = new GraphQLServer({
     }
   },
 })
+
+server.use(helmet())
 
 server.start(
   {
