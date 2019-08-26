@@ -8,6 +8,7 @@ export const User = objectType({
     t.model.name()
     t.model.email()
     t.model.posts({
+      // pagination: false doesn't work so need this as a workaround
       pagination: {},
     })
   },
