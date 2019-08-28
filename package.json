@@ -16,7 +16,7 @@
     "bcrypt": "3.0.6",
     "dotenv": "^8.1.0",
     "graphql-shield": "6.0.6",
-    "graphql-yoga": "1.18.2",
+    "graphql-yoga": "1.18.3",
     "helmet": "^3.20.0",
     "jsonwebtoken": "8.5.1",
     "nexus": "0.12.0-beta.7"
