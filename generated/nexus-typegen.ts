@@ -71,6 +71,7 @@ export interface NexusGenFieldTypes {
     post: NexusGenRootTypes['Post'] | null; // Post
   }
   User: { // field return type
+    createdAt: any; // DateTime!
     email: string; // String!
     id: string; // ID!
     name: string | null; // String
