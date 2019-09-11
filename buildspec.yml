@@ -6,26 +6,17 @@ phases:
       docker: 18
   pre_build:
     commands:
-      - apt-get install jq
+      - apt-get install jq -y
       - echo Logging in to Amazon ECR...
       - $(aws ecr get-login --no-include-email --region $AWS_DEFAULT_REGION)
   build:
     commands:
       - echo Build started on `date`
-      - echo "abc $POSTGRESQL_URL"
+      - export IMAGE_TAG=$(jq --raw-output '.version' package.json)
       - echo Building the Docker image...
       - docker build -t $IMAGE_REPO_NAME:$IMAGE_TAG .
       - docker tag $IMAGE_REPO_NAME:$IMAGE_TAG $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG
   post_build:
     commands:
+      - chmod u+x codebuild/postbuild.sh && ./codebuild/postbuild.sh
       - echo Build completed on `date`
-      - echo Pushing the Docker image...
-      - export IMAGE_NAME="${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${IMAGE_REPO_NAME}:${IMAGE_TAG}"
-      - echo $IMAGE_NAME
-      - docker push $IMAGE_NAME
-      # Register the ECS task definition and capture the version
-      - export TASK_VERSION=$(aws ecs register-task-definition --family "ios-test" --container-definitions "[{\"name\":\"ios-test\",\"image\":\"$IMAGE_NAME\",\"portMappings\":[{\"containerPort\":4002,\"hostPort\":80,\"protocol\":\"tcp\"}],\"memory\":512,\"essential\":true,\"environment\":[{\"name\":\"APP_SECRET\",\"value\":\"$APP_SECRET\"},{\"name\":\"POSTGRESQL_URL\",\"value\":\"$POSTGRESQL_URL\"}]}]" | jq --raw-output '.taskDefinition.revision')
-      # set the ECS service desired count to 0
-      - aws ecs update-service --cluster "ios-test" --service "ios-test-service" --desired-count 0
-      # set the ECS service desired count to 1 and assign new task definition
-      - aws ecs update-service --cluster "ios-test" --service "ios-test-service" --task-definition "ios-test:${TASK_VERSION}" --desired-count 1
