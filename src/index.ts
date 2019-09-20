@@ -3,13 +3,14 @@ config()
 
 import { nexusPrismaPlugin } from '@generated/nexus-prisma'
 import Photon from '@generated/photon'
-import { makeSchema } from '@prisma/nexus'
+import { makeSchema } from 'nexus'
 import { GraphQLServer } from 'graphql-yoga'
 import * as path from 'path'
 import * as allTypes from './resolvers'
 import * as helmet from 'helmet'
+import * as cookieParser from 'cookie-parser'
 import { Context } from './types'
-import { isDev } from './utils'
+import { isDev } from './utils/constants'
 import { permissions } from './permissions'
 
 const PORT = process.env.PORT || 4002
@@ -46,19 +47,26 @@ const schema = makeSchema({
 const server = new GraphQLServer({
   schema,
   middlewares: [permissions],
-  context: (request: any) => {
+  context: (request: any, response: any) => {
     return {
       ...request,
+      ...response,
       photon,
     }
   },
 })
 
-server.use(helmet())
+server.express.use(helmet())
+server.express.use(cookieParser())
 
 server.start(
   {
     port: PORT,
+    cors: {
+      credentials: true,
+      // FIXME: In development only! for production, add a url or a regex for subdomains.
+      origin: '*',
+    },
   },
   () => console.log(`🚀 Server ready at http://localhost:${PORT}`)
 )

@@ -1,5 +1,5 @@
 import { queryField } from 'nexus'
-import { getUserId } from '../../utils'
+import { getUserId } from '../../utils/constants'
 
 export const me = queryField('me', {
   type: 'User',

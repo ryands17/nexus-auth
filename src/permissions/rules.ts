@@ -1,20 +1,20 @@
 import { rule } from 'graphql-shield'
-import { getUserId } from '../utils'
+import { getUserId } from '../utils/constants'
 import { Context } from '../types'
 
 export const rules = {
-  isAuthenticatedUser: rule()((_, __, context: Context) => {
+  isAuthenticatedUser: rule()((_, __, ctx: Context) => {
     try {
-      const userId = getUserId(context)
+      const userId = getUserId(ctx)
       return Boolean(userId)
     } catch (e) {
       return e
     }
   }),
-  isPostOwner: rule()(async (_, { id }, context: Context) => {
+  isPostOwner: rule()(async (_, { id }, ctx: Context) => {
     try {
-      const userId = getUserId(context)
-      const author = await context.photon.posts
+      const userId = getUserId(ctx)
+      const author = await ctx.photon.posts
         .findOne({
           where: {
             id,

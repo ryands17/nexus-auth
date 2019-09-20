@@ -1,5 +1,5 @@
 import { idArg, stringArg, mutationField } from 'nexus'
-import { getUserId } from '../../utils'
+import { getUserId } from '../../utils/constants'
 
 export const createDraft = mutationField('createDraft', {
   type: 'Post',

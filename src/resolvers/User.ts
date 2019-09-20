@@ -1,4 +1,4 @@
-import { objectType } from '@prisma/nexus'
+import { objectType } from 'nexus'
 
 export const User = objectType({
   name: 'User',
@@ -8,8 +8,8 @@ export const User = objectType({
     t.model.name()
     t.model.email()
     t.model.posts({
-      // pagination: false doesn't work so need this as a workaround
       pagination: {},
+      ordering: true,
     })
   },
 })

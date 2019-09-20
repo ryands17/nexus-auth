@@ -1,5 +1,3 @@
-export class NotAuthenticated extends Error {
-  constructor() {
-    super('Unauthenticated user!')
-  }
+export const errors = {
+  notAuthenticated: 'Unauthenticated user!',
 }

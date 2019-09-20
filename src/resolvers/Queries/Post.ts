@@ -1,5 +1,5 @@
 import { stringArg, idArg, queryField } from 'nexus'
-import { getUserId } from '../../utils'
+import { getUserId } from '../../utils/constants'
 
 export const feed = queryField('feed', {
   type: 'Post',

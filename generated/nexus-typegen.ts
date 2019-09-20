@@ -5,10 +5,11 @@
 
 import * as ctx from "../src/types"
 import * as photon from "@generated/photon"
-import { core } from "nexus"
+
+
 
 declare global {
-  interface NexusGenCustomOutputMethods<TypeName extends string> {
+  interface NexusGenCustomOutputProperties<TypeName extends string> {
     crud: NexusPrisma<TypeName, 'crud'>
     model: NexusPrisma<TypeName, 'model'>
   }
@@ -19,14 +20,23 @@ declare global {
 }
 
 export interface NexusGenInputs {
+  UserPostsOrderByInput: { // input type
+    content?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+    createdAt?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+    id?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+    published?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+    title?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+    updatedAt?: NexusGenEnums['OrderByArg'] | null; // OrderByArg
+  }
 }
 
 export interface NexusGenEnums {
+  OrderByArg: photon.OrderByArg
 }
 
 export interface NexusGenRootTypes {
   AuthPayload: { // root type
-    token: string; // String!
+    accessToken: string; // String!
     user: NexusGenRootTypes['User']; // User!
   }
   Mutation: {};
@@ -42,11 +52,13 @@ export interface NexusGenRootTypes {
 }
 
 export interface NexusGenAllTypes extends NexusGenRootTypes {
+  UserPostsOrderByInput: NexusGenInputs['UserPostsOrderByInput'];
+  OrderByArg: NexusGenEnums['OrderByArg'];
 }
 
 export interface NexusGenFieldTypes {
   AuthPayload: { // field return type
-    token: string; // String!
+    accessToken: string; // String!
     user: NexusGenRootTypes['User']; // User!
   }
   Mutation: { // field return type
@@ -109,6 +121,11 @@ export interface NexusGenArgTypes {
       id?: string | null; // ID
     }
   }
+  User: {
+    posts: { // args
+      orderBy?: NexusGenInputs['UserPostsOrderByInput'] | null; // UserPostsOrderByInput
+    }
+  }
 }
 
 export interface NexusGenAbstractResolveReturnTypes {
@@ -118,9 +135,9 @@ export interface NexusGenInheritedFields {}
 
 export type NexusGenObjectNames = "AuthPayload" | "Mutation" | "Post" | "Query" | "User";
 
-export type NexusGenInputNames = never;
+export type NexusGenInputNames = "UserPostsOrderByInput";
 
-export type NexusGenEnumNames = never;
+export type NexusGenEnumNames = "OrderByArg";
 
 export type NexusGenInterfaceNames = never;
 
