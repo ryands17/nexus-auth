@@ -1,9 +1,13 @@
-node_modules
-.DS_Store
-query-engine*
-
+# env vars
 .env
 
+# nexus/prisma
 *.db
 dist/
 schema.graphql
+generated/
+
+# misc
+node_modules
+.DS_Store
+query-engine*
