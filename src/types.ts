@@ -5,3 +5,9 @@ export interface Context {
   request: any
   response: any
 }
+
+export interface Token {
+  userId: string
+  type: string
+  timestamp: number
+}

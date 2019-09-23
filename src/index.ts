@@ -12,6 +12,8 @@ import * as cookieParser from 'cookie-parser'
 import { Context } from './types'
 import { isDev } from './utils/constants'
 import { permissions } from './permissions'
+import { errors } from './utils/errors'
+import { validateRefreshToken, generateAccessToken } from './utils/helpers'
 
 const PORT = process.env.PORT || 4002
 
@@ -58,6 +60,23 @@ const server = new GraphQLServer({
 
 server.express.use(helmet())
 server.express.use(cookieParser())
+
+server.express.post('/refresh-token', (req, res) => {
+  try {
+    const { refreshToken } = req.cookies
+    const { userId } = validateRefreshToken(refreshToken)
+    const accessToken = generateAccessToken(userId)
+    res.json({
+      data: {
+        accessToken,
+      },
+    })
+  } catch (e) {
+    res.status(401).json({
+      message: errors.notAuthenticated,
+    })
+  }
+})
 
 server.start(
   {

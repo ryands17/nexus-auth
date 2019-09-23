@@ -1,6 +1,11 @@
 import { mutationField, stringArg } from 'nexus'
 import { compare, hash } from 'bcrypt'
-import { createTokens, handleError } from '../../utils/helpers'
+import {
+  generateAccessToken,
+  generateRefreshToken,
+  handleError,
+} from '../../utils/helpers'
+import { errors } from '../../utils/errors'
 
 export const signup = mutationField('signup', {
   type: 'AuthPayload',
@@ -19,7 +24,10 @@ export const signup = mutationField('signup', {
       },
     })
 
-    const { accessToken, refreshToken } = createTokens(user.id)
+    const [accessToken, refreshToken] = [
+      generateAccessToken(user.id),
+      generateRefreshToken(user.id),
+    ]
     ctx.response.cookie('refreshToken', refreshToken, {
       httpOnly: true,
     })
@@ -37,27 +45,32 @@ export const login = mutationField('login', {
     password: stringArg({ required: true }),
   },
   resolve: async (_, { email, password }, ctx) => {
+    let user = null
     try {
-      const user = await ctx.photon.users.findOne({
+      user = await ctx.photon.users.findOne({
         where: {
           email,
         },
       })
-      if (!user) throw Error()
-
-      const passwordValid = await compare(password, user.password)
-      if (!passwordValid) throw Error()
-
-      const { accessToken, refreshToken } = createTokens(user.id)
-      ctx.response.cookie('refreshToken', refreshToken, {
-        httpOnly: true,
-      })
-      return {
-        accessToken,
-        user,
-      }
     } catch (e) {
-      handleError('Invalid username or password')
+      handleError(errors.invalidUser)
+    }
+
+    if (!user) handleError(errors.invalidUser)
+
+    const passwordValid = await compare(password, user.password)
+    if (!passwordValid) handleError(errors.invalidUser)
+
+    const [accessToken, refreshToken] = [
+      generateAccessToken(user.id),
+      generateRefreshToken(user.id),
+    ]
+    ctx.response.cookie('refreshToken', refreshToken, {
+      httpOnly: true,
+    })
+    return {
+      accessToken,
+      user,
     }
   },
 })

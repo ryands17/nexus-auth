@@ -1,25 +1,34 @@
 import { verify } from 'jsonwebtoken'
-import { Context } from '../types'
-import { errors } from '../errors'
+import { Context, Token } from '../types'
+import { errors } from './errors'
 import { handleError } from './helpers'
+
+export const tokens = {
+  access: {
+    name: 'ACCESS_TOKEN',
+    expiry: '15m',
+  },
+  refresh: {
+    name: 'REFRESH_TOKEN',
+    expiry: '15d',
+  },
+}
 
 export const isDev = process.env.NODE_ENV === 'development'
 
 export const APP_SECRET = process.env.APP_SECRET
 
-interface Token {
-  userId: string
-}
-
-export function getUserId(context: Context) {
+export const getUserId = (context: Context) => {
   const Authorization = context.request.get('Authorization')
-  if (Authorization) {
+  try {
     const token = Authorization.replace('Bearer ', '')
     const verifiedToken = verify(token, APP_SECRET) as Token
 
-    if (!verifiedToken.userId) handleError(errors.notAuthenticated)
+    if (!verifiedToken.userId && verifiedToken.type !== tokens.access.name)
+      handleError(errors.notAuthenticated)
+
     return verifiedToken.userId
-  } else {
+  } catch (e) {
     handleError(errors.notAuthenticated)
   }
 }
