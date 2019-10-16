@@ -61,10 +61,10 @@ const server = new GraphQLServer({
 server.express.use(helmet())
 server.express.use(cookieParser())
 
-server.express.post('/refresh-token', (req, res) => {
+server.express.post('/refresh-token', async (req, res) => {
   try {
     const { refreshToken } = req.cookies
-    const { userId } = validateRefreshToken(refreshToken)
+    const userId = validateRefreshToken(refreshToken)
     const accessToken = generateAccessToken(userId)
     res.json({
       data: {
@@ -83,8 +83,8 @@ server.start(
     port: PORT,
     cors: {
       credentials: true,
-      // FIXME: In development only! for production, add a url or a regex for subdomains.
-      origin: '*',
+      // origin: process.env.CLIENT_ORIGIN,
+      origin: '*'
     },
   },
   () => console.log(`🚀 Server ready at http://localhost:${PORT}`)

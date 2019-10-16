@@ -34,11 +34,15 @@ export const generateRefreshToken = (userId: string) => {
 }
 
 export const validateRefreshToken = (token: string) => {
-  const verifiedToken = verify(token, APP_SECRET) as Token
-  if (!verifiedToken && verifiedToken.type !== tokens.refresh.name) {
+  try {
+    const verifiedToken = verify(token, APP_SECRET) as Token
+    if (!verifiedToken && verifiedToken.type !== tokens.refresh.name) {
+      handleError(errors.notAuthenticated)
+    }
+    return verifiedToken.userId
+  } catch (e) {
     handleError(errors.notAuthenticated)
   }
-  return verifiedToken
 }
 
 export const handleError = (error: string) => {
