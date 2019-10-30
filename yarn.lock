@@ -2190,9 +2190,9 @@ prelude-ls@~1.1.2:
   integrity sha1-IZMqVJ9eUv/ZqCf1cOBL5iqX2lQ=
 
 prisma2@^2.0.0-preview-8:
-  version "2.0.0-preview014.2"
-  resolved "https://registry.yarnpkg.com/prisma2/-/prisma2-2.0.0-preview014.2.tgz#1a9437a91663b9abc9d13212ca76ff33b18743ef"
-  integrity sha512-/AyU6C2xnAYHuJMVYRBFwXp2BJ7UGXet5C7YcN1sU9p0Rv8VXAauSS+SMjyP0RmYEjJPtiU8FqbYWyx4xLTsLg==
+  version "2.0.0-preview015"
+  resolved "https://registry.yarnpkg.com/prisma2/-/prisma2-2.0.0-preview015.tgz#0390b1db7c0b7d4eb5892652d77756f7598ff398"
+  integrity sha512-1vPWsdikTTrIsNlDq6TIIGzZfb5BEurryL6lnT5QxdHYvTZXvNj9pJFHlvlxQpegtqZGITUNM+h7Dud+Y1kUtA==
 
 process-nextick-args@~2.0.0:
   version "2.0.1"
