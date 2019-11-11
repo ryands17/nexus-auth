@@ -1302,13 +1302,12 @@ graphql-playground-middleware-lambda@1.7.12:
   dependencies:
     graphql-playground-html "1.6.12"
 
-graphql-shield@7.0.0:
-  version "7.0.0"
-  resolved "https://registry.yarnpkg.com/graphql-shield/-/graphql-shield-7.0.0.tgz#0cdca5c16af4ba7dd4fbcce6df279c5c8e463452"
-  integrity sha512-hr0PR6t/UXAO5+BMOOD2W3zTIKbtO/u8twjLn8hw4646E08NeLrIxDAmUFKKlLhyTe5JzlH4nNflP6SRtL6Q2A==
+graphql-shield@7.0.2:
+  version "7.0.2"
+  resolved "https://registry.yarnpkg.com/graphql-shield/-/graphql-shield-7.0.2.tgz#65d51528b4e36c4a5023276267abbd1abb57ce0b"
+  integrity sha512-ZgCQ9efzgehkIVMFoxaOubnvwHVqthtsIXA+xRu8B4ga2Ch/EHiswNCDKpTXTBQZmjeDCSHeAj4XDmbzR4Trxw==
   dependencies:
     "@types/yup" "0.26.24"
-    lightercollective "^0.3.0"
     object-hash "^2.0.0"
     yup "^0.27.0"
 
@@ -1705,11 +1704,6 @@ levn@^0.3.0, levn@~0.3.0:
   dependencies:
     prelude-ls "~1.1.2"
     type-check "~0.3.2"
-
-lightercollective@^0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/lightercollective/-/lightercollective-0.3.0.tgz#1f07638642ec645d70bdb69ab2777676f35a28f0"
-  integrity sha512-RFOLSUVvwdK3xA0P8o6G7QGXLIyy1L2qv5caEI7zXN5ciaEjbAriRF182kbsoJ1S1TgvpyGcN485fMky6qxOPw==
 
 load-json-file@^1.0.0:
   version "1.1.0"
