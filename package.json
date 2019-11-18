@@ -24,7 +24,7 @@
   "devDependencies": {
     "@types/bcrypt": "3.0.0",
     "@types/cookie-parser": "^1.4.2",
-    "@types/dotenv": "^6.1.1",
+    "@types/dotenv": "^8.2.0",
     "@types/eslint": "^6.1.1",
     "@types/helmet": "^0.0.45",
     "@types/jsonwebtoken": "8.3.5",
