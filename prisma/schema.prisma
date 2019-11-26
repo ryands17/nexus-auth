@@ -14,9 +14,6 @@ generator photon {
   provider = "photonjs"
 }
 
-generator nexus_prisma {
-  provider = "nexus-prisma"
-}
 
 model Post {
   id        String   @default(cuid()) @id @unique

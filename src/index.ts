@@ -1,11 +1,11 @@
 import { config } from 'dotenv'
 config()
 
-import { nexusPrismaPlugin } from '@generated/nexus-prisma'
-import Photon from '@generated/photon'
+import { nexusPrismaPlugin } from 'nexus-prisma'
+import { Photon } from '@prisma/photon'
 import { makeSchema } from 'nexus'
 import { GraphQLServer } from 'graphql-yoga'
-import * as path from 'path'
+import { join } from 'path'
 import * as allTypes from './resolvers'
 import * as helmet from 'helmet'
 import * as cookieParser from 'cookie-parser'
@@ -26,19 +26,23 @@ const nexusPrisma = nexusPrismaPlugin({
 })
 
 const schema = makeSchema({
-  types: [allTypes, nexusPrisma],
+  types: [allTypes],
+  plugins: [nexusPrisma],
   outputs: {
-    typegen: path.join(__dirname, '../generated/nexus-typegen.ts'),
-    schema: path.join(__dirname, '/schema.graphql'),
+    typegen: join(
+      __dirname,
+      '..',
+      'node_modules/@types/nexus-typegen/index.d.ts'
+    ),
   },
   typegenAutoConfig: {
     sources: [
       {
-        source: '@generated/photon',
+        source: '@prisma/photon',
         alias: 'photon',
       },
       {
-        source: path.join(__dirname, 'types.ts'),
+        source: join(__dirname, 'types.ts'),
         alias: 'ctx',
       },
     ],
@@ -84,7 +88,7 @@ server.start(
     cors: {
       credentials: true,
       // origin: process.env.CLIENT_ORIGIN,
-      origin: '*'
+      origin: '*',
     },
   },
   () => console.log(`🚀 Server ready at http://localhost:${PORT}`)
