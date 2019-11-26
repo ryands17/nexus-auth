@@ -12,7 +12,7 @@
     "db:migrate": "prisma2 lift up"
   },
   "dependencies": {
-    "bcrypt": "3.0.6",
+    "bcrypt": "3.0.7",
     "cookie-parser": "^1.4.4",
     "dotenv": "^8.1.0",
     "graphql-shield": "7.0.2",
