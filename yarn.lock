@@ -1966,10 +1966,10 @@ negotiator@0.6.2:
   resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.2.tgz#feacf7ccf525a77ae9634436a64883ffeca346fb"
   integrity sha512-hZXc7K2e+PgeI1eDBe/10Ard4ekbfrrqG8Ep+8Jmf4JID2bNg7NvCPOZN+kfF574pFQI7mum2AUqDidoKqcTOw==
 
-nexus@0.12.0-rc.4:
-  version "0.12.0-rc.4"
-  resolved "https://registry.yarnpkg.com/nexus/-/nexus-0.12.0-rc.4.tgz#ba9308d050aaadd1e9495194d724b495668cfd29"
-  integrity sha512-8y8oeZjmIPHQO/pVKIHPFXyVg7NqDh61xH8Ccw42inezN6Q4Lx4K7hBLfTBXOFBtnUXeYRIWjqS3qylS6hLIWg==
+nexus@0.12.0-rc.5:
+  version "0.12.0-rc.5"
+  resolved "https://registry.yarnpkg.com/nexus/-/nexus-0.12.0-rc.5.tgz#98232f4ced045353892bfc9e06a0ff383143ba22"
+  integrity sha512-eDZVVwjndggBbcMtqniSXnPhcz605zYS7jwcYb7LIq2uCUPa5vKE/mQ/LQIfaCN0aLqYtch1UnRq0nf41V1FDg==
   dependencies:
     iterall "^1.2.2"
     tslib "^1.9.3"
