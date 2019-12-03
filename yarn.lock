@@ -26,9 +26,9 @@
     regenerator-runtime "^0.13.2"
 
 "@prisma/photon@^2.0.0-preview017":
-  version "2.0.0-preview017"
-  resolved "https://registry.yarnpkg.com/@prisma/photon/-/photon-2.0.0-preview017.tgz#2b2ef8bfc63ce393ed0e4149976a7833dd123b95"
-  integrity sha512-O/SGsJoQ/3+eRLVLJMyRhzHa+TFZFBtUYkA9m88Y7vA8/4DslSzCGcY43P9Um5LHOa8Po4GGEBrJcCHyz62HLw==
+  version "2.0.0-preview017.2"
+  resolved "https://registry.yarnpkg.com/@prisma/photon/-/photon-2.0.0-preview017.2.tgz#046ffe1a21ec8f00e54815ac917bf2269e3691b1"
+  integrity sha512-cWAmYKYpMh0o33yGMpjs8KoDjTGwJ4M/kR+0ACDMSWocc3Rote0EZcGSL4AsJ2u5TrT9yLymECHDiAzDdDcTjQ==
 
 "@types/aws-lambda@8.10.13":
   version "8.10.13"
