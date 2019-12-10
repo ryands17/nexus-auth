@@ -1,4 +1,4 @@
-import Photon from '@generated/photon'
+import { Photon } from '@prisma/photon'
 const photon = new Photon()
 
 async function main() {
@@ -40,6 +40,6 @@ async function main() {
   console.log({ user1, user2 })
 }
 
-main().then(async () => {
+main().finally(async () => {
   await photon.disconnect()
 })
