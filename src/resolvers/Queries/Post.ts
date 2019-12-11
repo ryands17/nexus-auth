@@ -4,7 +4,7 @@ import { getUserId } from '../../utils/constants'
 export const feed = queryField('feed', {
   type: 'Post',
   list: true,
-  resolve: (_, __, ctx) => {
+  resolve: (_parent, _args, ctx) => {
     return ctx.photon.posts.findMany({
       where: { published: true },
     })
@@ -17,7 +17,7 @@ export const filterPosts = queryField('filterPosts', {
   args: {
     searchString: stringArg({ nullable: true }),
   },
-  resolve: (_, { searchString }, ctx) => {
+  resolve: (_parent, { searchString }, ctx) => {
     getUserId(ctx)
     return ctx.photon.posts.findMany({
       where: {
@@ -42,7 +42,7 @@ export const post = queryField('post', {
   type: 'Post',
   nullable: true,
   args: { id: idArg() },
-  resolve: (_, { id }, ctx) => {
+  resolve: (_parent, { id }, ctx) => {
     return ctx.photon.posts.findOne({
       where: {
         id,
