@@ -1,15 +1,11 @@
 datasource db {
   provider = "sqlite"
-  url      = "file:dev.db"
+  url = "***"
   default  = true
 }
 
 generator photon {
   provider = "photonjs"
-}
-
-generator nexus_prisma {
-  provider = "nexus-prisma"
 }
 
 model Post {
@@ -19,6 +15,7 @@ model Post {
   published Boolean
   title     String
   content   String?
+  views     Int      @default(0)
   author    User?
 }
 

@@ -8,8 +8,8 @@ export const User = objectType({
     t.model.name()
     t.model.email()
     t.model.posts({
-      pagination: {},
-      ordering: true,
+      pagination: { first: true },
+      ordering: { views: true },
     })
   },
 })

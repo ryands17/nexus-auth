@@ -1,0 +1,26 @@
+{
+  "version": "0.3.14-fixed",
+  "steps": [
+    {
+      "stepType": "CreateField",
+      "model": "Post",
+      "field": "views",
+      "type": "Int",
+      "arity": "required"
+    },
+    {
+      "stepType": "CreateDirective",
+      "model": "Post",
+      "field": "views",
+      "directive": "default"
+    },
+    {
+      "stepType": "CreateDirectiveArgument",
+      "model": "Post",
+      "field": "views",
+      "directive": "default",
+      "argument": "",
+      "value": "0"
+    }
+  ]
+}

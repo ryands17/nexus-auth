@@ -1,3 +1,10 @@
+// postgres
+// datasource pg {
+//   provider = "postgresql"
+//   url      = env("POSTGRESQL_URL")
+//   enabled  = false
+// }
+
 import { Photon } from '@prisma/photon'
 const photon = new Photon()
 
@@ -27,11 +34,18 @@ async function main() {
             title: 'Subscribe to GraphQL Weekly for community news',
             content: 'https://graphqlweekly.com/',
             published: true,
+            views: 10,
           },
           {
             title: 'Follow Prisma on Twitter',
             content: 'https://twitter.com/prisma',
-            published: false,
+            published: true,
+          },
+          {
+            title: 'Follow Nexus Prisma plugin',
+            content: 'https://github.com/prisma-labs/nexus-prisma',
+            published: true,
+            views: 20,
           },
         ],
       },

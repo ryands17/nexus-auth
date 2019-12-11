@@ -11,7 +11,7 @@
     "db:migrate": "prisma2 lift up"
   },
   "dependencies": {
-    "@prisma/photon": "^2.0.0-preview017",
+    "@prisma/photon": "2.0.0-preview017",
     "bcrypt": "3.0.7",
     "cookie-parser": "^1.4.4",
     "dotenv": "^8.1.0",
@@ -35,7 +35,7 @@
     "cross-env": "^6.0.0",
     "eslint": "^6.4.0",
     "eslint-config-prettier": "^6.2.0",
-    "prisma2": "^2.0.0-preview018.1",
+    "prisma2": "2.0.0-preview017",
     "ts-node": "^8.5.2",
     "ts-node-dev": "1.0.0-pre.44",
     "typescript": "3.7.3",
