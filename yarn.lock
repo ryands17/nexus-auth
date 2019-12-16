@@ -2253,10 +2253,10 @@ prelude-ls@~1.1.2:
   resolved "https://registry.yarnpkg.com/prelude-ls/-/prelude-ls-1.1.2.tgz#21932a549f5e52ffd9a827f570e04be62a97da54"
   integrity sha1-IZMqVJ9eUv/ZqCf1cOBL5iqX2lQ=
 
-prisma2@2.0.0-preview017:
-  version "2.0.0-preview017"
-  resolved "https://registry.yarnpkg.com/prisma2/-/prisma2-2.0.0-preview017.tgz#1e5bcbf52569d98c98577eb6bff93d536374aa52"
-  integrity sha512-YSFWLtnhO/5qodTjWCw0kiJjRh+7iRY22mdvvYMcq7hjmK9d7/cmc7gkTYv6aBAMRYgbkBDsjLCrOy16pmenlQ==
+prisma2@2.0.0-preview018.2:
+  version "2.0.0-preview018.2"
+  resolved "https://registry.yarnpkg.com/prisma2/-/prisma2-2.0.0-preview018.2.tgz#404a56d3d4be95f4e19819e9bea43efaebf2b34e"
+  integrity sha512-/0ulQKc4dCk37AGvVq8KlLRPqwv4AnuCTf/vjDaMBh1yfeaIP4ZHtAsujz53jsv1VIJs4fClKq/hTyyGWAPZLQ==
 
 process-nextick-args@~2.0.0:
   version "2.0.1"
