@@ -11,7 +11,7 @@
     "db:migrate": "prisma2 lift up"
   },
   "dependencies": {
-    "@prisma/photon": "2.0.0-preview017",
+    "@prisma/photon": "2.0.0-preview018.2",
     "bcrypt": "3.0.7",
     "cookie-parser": "^1.4.4",
     "dotenv": "^8.1.0",
