@@ -1,9 +1,10 @@
 import { Photon } from '@prisma/photon'
+import { ContextParameters } from 'graphql-yoga/dist/types'
 
 export interface Context {
   photon: Photon
-  request: any
-  response: any
+  request: ContextParameters['request']
+  response: ContextParameters['response']
 }
 
 export interface Token {
