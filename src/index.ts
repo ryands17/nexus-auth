@@ -15,7 +15,7 @@ import { schema } from './schema'
 const PORT = process.env.PORT || 4002
 
 const photon = new Photon({
-  debug: isDev,
+  debug: isDev(),
 })
 
 const server = new GraphQLServer({

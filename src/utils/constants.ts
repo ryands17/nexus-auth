@@ -14,7 +14,7 @@ export const tokens = {
   },
 }
 
-export const isDev = process.env.NODE_ENV === 'development'
+export const isDev = () => process.env.NODE_ENV === 'development'
 
 export const APP_SECRET = process.env.APP_SECRET
 

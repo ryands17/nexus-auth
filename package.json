@@ -12,7 +12,7 @@
     "generate:prisma": "prisma2 generate",
     "generate:nexus": "ts-node --transpile-only ./src/schema",
     "db:migrate": "prisma2 lift up",
-    "start": "node dist/src/index.js"
+    "start": "cross-env NODE_ENV=production node dist/src/index.js"
   },
   "dependencies": {
     "@prisma/photon": "2.0.0-preview019",
