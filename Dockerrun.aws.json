@@ -1,0 +1,11 @@
+{
+  "AWSEBDockerrunVersion": "1",
+  "Image": {
+    "Name": "image-name from ECR or Dockerhub"
+  },
+  "Ports": [
+    {
+      "ContainerPort": 4002
+    }
+  ]
+}
