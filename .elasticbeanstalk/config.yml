@@ -12,5 +12,7 @@ global:
   platform_name: null
   platform_version: null
   repository: null
+  # your aws profile with access and secret keys set
+  profile: default
   sc: git
   workspace_type: Application

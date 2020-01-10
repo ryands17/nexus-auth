@@ -1,18 +1,12 @@
-FROM node:8.16.0-stretch as BUILDER
+FROM node:10.18.0-stretch as BUILDER
 
 WORKDIR /app
 
-COPY package.json yarn.lock ./
-
-RUN yarn
-
 COPY . .
 
-ENV POSTGRESQL_URL=$POSTGRESQL_URL
+RUN yarn && yarn build
 
-RUN npm run gen:schema && npm run build
-
-FROM node:8.16.0-stretch-slim
+FROM node:10.18.0-stretch-slim
 
 WORKDIR /app
 
