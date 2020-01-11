@@ -3,6 +3,11 @@ import { APP_SECRET, tokens } from './constants'
 import { Token } from '../types'
 import { errors } from './errors'
 
+export const handleError = (error: any) => {
+  // add any other logging mechanism here e.g. Sentry
+  throw error
+}
+
 export const generateAccessToken = (userId: string) => {
   const accessToken = sign(
     {
@@ -43,9 +48,4 @@ export const validateRefreshToken = (token: string) => {
   } catch (e) {
     handleError(errors.notAuthenticated)
   }
-}
-
-export const handleError = (error: string) => {
-  // add any other logging mechanism here e.g. Sentry
-  throw new Error(error)
 }

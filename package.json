@@ -4,18 +4,20 @@
   "scripts": {
     "postinstall": "typesync",
     "predev": "npm run generate:prisma",
-    "dev": "cross-env NODE_ENV=development tsnd --no-notify --respawn --transpileOnly ./src/schema",
+    "dev": "cross-env NODE_ENV=development tsnd --no-notify --respawn --transpileOnly ./src",
     "prebuild": "npm run -s clean && npm run -s generate:prisma && npm run -s generate:nexus",
     "build": "cross-env NODE_ENV=production tsc",
     "seed": "ts-node prisma/seed.ts",
     "clean": "rimraf dist",
     "generate:prisma": "prisma2 generate",
     "generate:nexus": "ts-node --transpile-only ./src/schema",
+    "db:save": "prisma2 lift save --name",
     "db:migrate": "prisma2 lift up",
     "start": "cross-env NODE_ENV=production node dist/src/index.js"
   },
   "dependencies": {
     "@prisma/photon": "2.0.0-preview019",
+    "apollo-server": "^2.9.16",
     "bcrypt": "3.0.7",
     "cookie-parser": "^1.4.4",
     "dotenv": "^8.1.0",
