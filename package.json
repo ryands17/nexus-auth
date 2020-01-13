@@ -5,7 +5,7 @@
     "postinstall": "typesync",
     "predev": "npm run generate:prisma",
     "dev": "cross-env NODE_ENV=development tsnd --no-notify --respawn --transpileOnly ./src",
-    "prebuild": "npm run -s clean && npm run -s generate:prisma && npm run -s generate:nexus",
+    "prebuild": "cross-env NODE_ENV=production npm run -s clean && npm run -s generate:prisma && npm run -s generate:nexus",
     "build": "cross-env NODE_ENV=production tsc",
     "seed": "ts-node prisma/seed.ts",
     "clean": "rimraf dist",
