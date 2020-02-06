@@ -16,7 +16,7 @@ export const signup = mutationField('signup', {
   },
   resolve: async (_parent, { name, email, password }, ctx) => {
     const hashedPassword = await hash(password, 10)
-    const user = await ctx.photon.users.create({
+    const user = await ctx.photon.user.create({
       data: {
         name,
         email,
@@ -47,7 +47,7 @@ export const login = mutationField('login', {
   resolve: async (_parent, { email, password }, ctx) => {
     let user = null
     try {
-      user = await ctx.photon.users.findOne({
+      user = await ctx.photon.user.findOne({
         where: {
           email,
         },

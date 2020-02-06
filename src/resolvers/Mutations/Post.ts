@@ -9,7 +9,7 @@ export const createDraft = mutationField('createDraft', {
   },
   resolve: (_parent, { title, content }, ctx) => {
     const userId = getUserId(ctx)
-    return ctx.photon.posts.create({
+    return ctx.photon.post.create({
       data: {
         title,
         content,
@@ -25,7 +25,7 @@ export const deletePost = mutationField('deletePost', {
   nullable: true,
   args: { id: idArg() },
   resolve: (_parent, { id }, ctx) => {
-    return ctx.photon.posts.delete({
+    return ctx.photon.post.delete({
       where: {
         id,
       },
@@ -38,7 +38,7 @@ export const publish = mutationField('publish', {
   nullable: true,
   args: { id: idArg() },
   resolve: (_parent, { id }, ctx) => {
-    return ctx.photon.posts.update({
+    return ctx.photon.post.update({
       where: { id },
       data: { published: true },
     })

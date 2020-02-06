@@ -1,7 +1,7 @@
 import { config } from 'dotenv'
 config()
 
-import { Photon } from '@prisma/photon'
+import { PrismaClient } from '@prisma/client'
 import { GraphQLServer } from 'graphql-yoga'
 import * as helmet from 'helmet'
 import * as cookieParser from 'cookie-parser'
@@ -14,7 +14,7 @@ import { schema } from './schema'
 
 const PORT = process.env.PORT || 4002
 
-const photon = new Photon({
+const photon = new PrismaClient({
   debug: isDev(),
 })
 

@@ -14,7 +14,7 @@ export const rules = {
   isPostOwner: rule()(async (_parent, { id }, ctx: Context) => {
     try {
       const userId = getUserId(ctx)
-      const author = await ctx.photon.posts
+      const author = await ctx.photon.post
         .findOne({
           where: {
             id,
