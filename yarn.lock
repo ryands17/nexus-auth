@@ -373,10 +373,10 @@
   dependencies:
     "@types/node" "*"
 
-"@types/yup@0.26.30":
-  version "0.26.30"
-  resolved "https://registry.yarnpkg.com/@types/yup/-/yup-0.26.30.tgz#0d6066505bb67e7b9b161b2082c4cdfcdafd6a6b"
-  integrity sha512-b/uklO68T/eShWnxjlgwOJlEFOQ11ib3i1wQQiLmHqFJTxDMvz+tb4XzThGQISzOcelMnoSdb1Po4s69YkEQeg==
+"@types/yup@0.26.31":
+  version "0.26.31"
+  resolved "https://registry.yarnpkg.com/@types/yup/-/yup-0.26.31.tgz#c93fa9a44aed4600e637f616dee86ca4c206b03e"
+  integrity sha512-AAzbI9Ja7B4qkr//amKAmIRz7oXWO1B1l4NILqdXJi+cwT5DOJM17HXJr/aq2vflmHOFTqryEN5JeRJJXda3dw==
 
 "@types/zen-observable@^0.5.3":
   version "0.5.4"
@@ -1745,12 +1745,12 @@ graphql-playground-middleware-lambda@1.7.12:
   dependencies:
     graphql-playground-html "1.6.12"
 
-graphql-shield@7.0.11:
-  version "7.0.11"
-  resolved "https://registry.yarnpkg.com/graphql-shield/-/graphql-shield-7.0.11.tgz#78d49f346326be71090d35d8f5843da9ee8136e2"
-  integrity sha512-iWn/aiom2c8NuOj60euWTmsKKUjX1DB4ynBcDitQOLXG3WrWgss2Iolzr553qooJvkR5czeAFgPlZgI+nUgwsQ==
+graphql-shield@7.0.12:
+  version "7.0.12"
+  resolved "https://registry.yarnpkg.com/graphql-shield/-/graphql-shield-7.0.12.tgz#cc09942e0055159ff6c10cd281b6600056db508a"
+  integrity sha512-7oQb6WcGiIELvmAA2CTtCvWl5bMoZwfYo4/VwYkZvLNwv2hU8X3cLGdo+1Er+7WLa/Ck9sJGdCMlO29sWnTk8g==
   dependencies:
-    "@types/yup" "0.26.30"
+    "@types/yup" "0.26.31"
     object-hash "^2.0.0"
     yup "^0.28.0"
 
