@@ -25,7 +25,7 @@
     "graphql-yoga": "1.18.3",
     "helmet": "^3.21.1",
     "jsonwebtoken": "8.5.1",
-    "nexus": "0.12.0-rc.9",
+    "nexus": "0.12.0-rc.11",
     "nexus-prisma": "^0.9.1"
   },
   "devDependencies": {
