@@ -18,7 +18,7 @@
   "dependencies": {
     "@prisma/client": "^2.0.0-preview021",
     "apollo-server": "^2.10.0",
-    "bcrypt": "4.0.0",
+    "bcrypt": "4.0.1",
     "cookie-parser": "^1.4.4",
     "dotenv": "^8.1.0",
     "graphql-shield": "7.0.14",
