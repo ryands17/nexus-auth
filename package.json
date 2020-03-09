@@ -42,7 +42,7 @@
     "cross-env": "^7.0.0",
     "eslint": "^6.4.0",
     "eslint-config-prettier": "^6.8.0",
-    "prisma2": "2.0.0-preview021",
+    "prisma2": "2.0.0-preview023",
     "rimraf": "^3.0.0",
     "ts-node": "^8.6.0",
     "ts-node-dev": "1.0.0-pre.44",

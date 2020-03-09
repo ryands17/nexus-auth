@@ -394,15 +394,6 @@
     regexpp "^3.0.0"
     tsutils "^3.17.1"
 
-"@typescript-eslint/experimental-utils@2.21.0":
-  version "2.21.0"
-  resolved "https://registry.yarnpkg.com/@typescript-eslint/experimental-utils/-/experimental-utils-2.21.0.tgz#71de390a3ec00b280b69138d80733406e6e86bfa"
-  integrity sha512-olKw9JP/XUkav4lq0I7S1mhGgONJF9rHNhKFn9wJlpfRVjNo3PPjSvybxEldvCXnvD+WAshSzqH5cEjPp9CsBA==
-  dependencies:
-    "@types/json-schema" "^7.0.3"
-    "@typescript-eslint/typescript-estree" "2.21.0"
-    eslint-scope "^5.0.0"
-
 "@typescript-eslint/experimental-utils@2.22.0":
   version "2.22.0"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/experimental-utils/-/experimental-utils-2.22.0.tgz#4d00c91fbaaa68e56e7869be284999a265707f85"
@@ -421,19 +412,6 @@
     "@typescript-eslint/experimental-utils" "2.22.0"
     "@typescript-eslint/typescript-estree" "2.22.0"
     eslint-visitor-keys "^1.1.0"
-
-"@typescript-eslint/typescript-estree@2.21.0":
-  version "2.21.0"
-  resolved "https://registry.yarnpkg.com/@typescript-eslint/typescript-estree/-/typescript-estree-2.21.0.tgz#7e4be29f2e338195a2e8c818949ed0ff727cc943"
-  integrity sha512-NC/nogZNb9IK2MEFQqyDBAciOT8Lp8O3KgAfvHx2Skx6WBo+KmDqlU3R9KxHONaijfTIKtojRe3SZQyMjr3wBw==
-  dependencies:
-    debug "^4.1.1"
-    eslint-visitor-keys "^1.1.0"
-    glob "^7.1.6"
-    is-glob "^4.0.1"
-    lodash "^4.17.15"
-    semver "^6.3.0"
-    tsutils "^3.17.1"
 
 "@typescript-eslint/typescript-estree@2.22.0":
   version "2.22.0"
@@ -2788,10 +2766,10 @@ prelude-ls@~1.1.2:
   resolved "https://registry.yarnpkg.com/prelude-ls/-/prelude-ls-1.1.2.tgz#21932a549f5e52ffd9a827f570e04be62a97da54"
   integrity sha1-IZMqVJ9eUv/ZqCf1cOBL5iqX2lQ=
 
-prisma2@2.0.0-preview021:
-  version "2.0.0-preview021"
-  resolved "https://registry.yarnpkg.com/prisma2/-/prisma2-2.0.0-preview021.tgz#3d27b7f1e2ac519ba0851e0bcc92eb5da1460e50"
-  integrity sha512-Llj0U+t4kWrC75U2ReDFRQkch/nwfDtO94k71UcNa/88ABjE03uwgw3EbSke7GB5VOl0nXUKRlzEAyk5SS3jqA==
+prisma2@2.0.0-preview023:
+  version "2.0.0-preview023"
+  resolved "https://registry.yarnpkg.com/prisma2/-/prisma2-2.0.0-preview023.tgz#9c692b6fe0f3917b9ad295db6fa15018e5465ca9"
+  integrity sha512-rwK1fzVcC9S9eJJBn1qBwO3ccuN0FRii3UkQcwIGg98jyo3nx0QuLSmH0c6xtxDWhzIN1sRMepZf959AaVNxkA==
 
 process-nextick-args@~2.0.0:
   version "2.0.1"
