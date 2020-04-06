@@ -6,7 +6,7 @@ phases:
       docker: 19
   pre_build:
     commands:
-      - apt-get install jq -y
+      - apt-get update && apt-get install jq -y
       - echo Logging in to Amazon ECR...
       - $(aws ecr get-login --no-include-email --region $AWS_DEFAULT_REGION)
   build:
@@ -16,7 +16,6 @@ phases:
       - echo Building the Docker image...
       - docker build -t $IMAGE_REPO_NAME:$IMAGE_TAG .
       - docker tag $IMAGE_REPO_NAME:$IMAGE_TAG $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG
-  post_build:
-    commands:
       - chmod u+x codebuild/postbuild.sh && ./codebuild/postbuild.sh
+    finally:
       - echo Build completed on `date`

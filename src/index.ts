@@ -6,7 +6,6 @@ import { GraphQLServer } from 'graphql-yoga'
 import * as helmet from 'helmet'
 import * as cookieParser from 'cookie-parser'
 import { Context } from './types'
-import { isDev } from './utils/constants'
 import { permissions } from './permissions'
 import { errors } from './utils/errors'
 import { validateRefreshToken, generateAccessToken } from './utils/helpers'
@@ -14,9 +13,7 @@ import { schema } from './schema'
 
 const PORT = process.env.PORT || 4002
 
-const photon = new PrismaClient({
-  debug: isDev(),
-})
+const prisma = new PrismaClient()
 
 const server = new GraphQLServer({
   schema,
@@ -25,7 +22,7 @@ const server = new GraphQLServer({
     return {
       ...request,
       ...response,
-      photon,
+      prisma,
     }
   },
 })

@@ -5,7 +5,7 @@ import * as allTypes from './resolvers'
 import { Context } from './types'
 
 const nexusPrisma = nexusPrismaPlugin({
-  prismaClient: (ctx: Context) => ctx.photon,
+  prismaClient: (ctx: Context) => ctx.prisma,
 })
 
 export const schema = makeSchema({
@@ -23,7 +23,7 @@ export const schema = makeSchema({
     sources: [
       {
         source: '@prisma/client',
-        alias: 'photon',
+        alias: 'prisma',
       },
       {
         source: join(__dirname, 'types.ts'),

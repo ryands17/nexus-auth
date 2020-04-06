@@ -1,7 +1,6 @@
 datasource db {
   provider = "sqlite"
-  url      = "file:dev.db"
-  default  = true
+  url      = "file:./dev.db"
 }
 
 generator photon {
@@ -10,17 +9,17 @@ generator photon {
 
 model Post {
   id        String   @default(cuid()) @id
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
   published Boolean
   title     String
   content   String?
-  views     Int      @default(0)
-  author    User?
+  authorId  Int?
+  author    User?    @relation(fields: [authorId], references: [id])
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
 model User {
-  id        String   @default(cuid()) @id
+  id        Int      @default(autoincrement()) @id
   email     String   @unique
   password  String
   name      String?

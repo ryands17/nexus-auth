@@ -5,7 +5,7 @@ export const feed = queryField('feed', {
   type: 'Post',
   list: true,
   resolve: (_parent, _args, ctx) => {
-    return ctx.photon.post.findMany({
+    return ctx.prisma.post.findMany({
       where: { published: true },
     })
   },
@@ -19,7 +19,7 @@ export const filterPosts = queryField('filterPosts', {
   },
   resolve: (_parent, { searchString }, ctx) => {
     getUserId(ctx)
-    return ctx.photon.post.findMany({
+    return ctx.prisma.post.findMany({
       where: {
         OR: [
           {
@@ -43,7 +43,7 @@ export const post = queryField('post', {
   nullable: true,
   args: { id: idArg() },
   resolve: (_parent, { id }, ctx) => {
-    return ctx.photon.post.findOne({
+    return ctx.prisma.post.findOne({
       where: {
         id,
       },

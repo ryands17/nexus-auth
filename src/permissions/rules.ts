@@ -8,13 +8,13 @@ export const rules = {
       const userId = getUserId(ctx)
       return Boolean(userId)
     } catch (e) {
-      return e
+      console.log(e)
     }
   }),
   isPostOwner: rule()(async (_parent, { id }, ctx: Context) => {
     try {
       const userId = getUserId(ctx)
-      const author = await ctx.photon.post
+      const author = await ctx.prisma.post
         .findOne({
           where: {
             id,

@@ -6,10 +6,10 @@
 // }
 
 import { PrismaClient } from '@prisma/client'
-const photon = new PrismaClient()
+const prisma = new PrismaClient()
 
 async function main() {
-  const user1 = await photon.user.create({
+  const user1 = await prisma.user.create({
     data: {
       email: 'alice@prisma.io',
       name: 'Alice',
@@ -23,7 +23,7 @@ async function main() {
       },
     },
   })
-  const user2 = await photon.user.create({
+  const user2 = await prisma.user.create({
     data: {
       email: 'bob@prisma.io',
       name: 'Bob',
@@ -34,7 +34,6 @@ async function main() {
             title: 'Subscribe to GraphQL Weekly for community news',
             content: 'https://graphqlweekly.com/',
             published: true,
-            views: 10,
           },
           {
             title: 'Follow Prisma on Twitter',
@@ -45,7 +44,6 @@ async function main() {
             title: 'Follow Nexus Prisma plugin',
             content: 'https://github.com/prisma-labs/nexus-prisma',
             published: true,
-            views: 20,
           },
         ],
       },
@@ -55,5 +53,5 @@ async function main() {
 }
 
 main().finally(async () => {
-  await photon.disconnect()
+  await prisma.disconnect()
 })

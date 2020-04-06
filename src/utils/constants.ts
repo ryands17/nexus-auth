@@ -27,7 +27,7 @@ export const getUserId = (context: Context) => {
     if (!verifiedToken.userId && verifiedToken.type !== tokens.access.name)
       handleError(errors.notAuthenticated)
 
-    return verifiedToken.userId
+    return parseInt(verifiedToken.userId)
   } catch (e) {
     handleError(errors.notAuthenticated)
   }

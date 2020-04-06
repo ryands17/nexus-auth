@@ -1,14 +1,13 @@
 import * as User from './User'
 import * as Post from './Post'
-import { queryField } from 'nexus'
 
-const info = queryField('info', {
-  type: 'String',
-  resolve: () => 'API is functional!',
-})
+// const info = queryField('info', {
+//   type: 'String',
+//   resolve: () => 'API is functional!',
+// })
 
 export const Query = {
-  info,
+  // info,
   ...User,
   ...Post,
 }
@@ -19,7 +18,7 @@ export const Query = {
 //       type: 'User',
 //       resolve: (_, __, ctx: Context) => {
 //         const userId = getUserId(ctx)
-//         return ctx.photon.users.findOne({
+//         return ctx.prisma.users.findOne({
 //           where: {
 //             id: userId,
 //           },
@@ -30,7 +29,7 @@ export const Query = {
 //     t.list.field('feed', {
 //       type: 'Post',
 //       resolve: (_, args, ctx) => {
-//         return ctx.photon.posts.findMany({
+//         return ctx.prisma.posts.findMany({
 //           where: { published: true },
 //         })
 //       },
@@ -43,7 +42,7 @@ export const Query = {
 //       },
 //       resolve: (_, { searchString }, ctx) => {
 //         getUserId(ctx)
-//         return ctx.photon.posts.findMany({
+//         return ctx.prisma.posts.findMany({
 //           where: {
 //             OR: [
 //               {
@@ -67,7 +66,7 @@ export const Query = {
 //       nullable: true,
 //       args: { id: idArg() },
 //       resolve: (_, { id }, ctx) => {
-//         return ctx.photon.posts.findOne({
+//         return ctx.prisma.posts.findOne({
 //           where: {
 //             id,
 //           },

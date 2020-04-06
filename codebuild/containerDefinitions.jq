@@ -1,6 +1,6 @@
 [
   {
-    "name": "ios-test",
+    "name": env.IMAGE_NAME,
     "image": env.IMAGE_NAME,
     "portMappings": [
       {
@@ -9,7 +9,7 @@
         "protocol": "tcp"
       }
     ],
-    "memory": 128,
+    "memory": 512,
     "essential": true,
     "environment": [
       {
