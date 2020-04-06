@@ -1,68 +1,55 @@
-# GraphQL Server with Authentication & Permissions
+# GraphQL Server with Authentication & Permissions using Prisma 2 beta and Nexus
 
-This example shows how to implement a **GraphQL server with an email-password-based authentication workflow and authentication rules**, based on Prisma, [graphql-yoga](https://github.com/prisma/graphql-yoga), [graphql-shield](https://github.com/maticzav/graphql-shield) & [GraphQL Nexus](https://nexus.js.org/).
+This example shows how to implement a **GraphQL server with an email-password-based authentication workflow and authentication rules**, based on [Prisma](https://www.prisma.io/), [graphql-yoga](https://github.com/prisma-labs/graphql-yoga), [graphql-shield](https://github.com/maticzav/graphql-shield) & [GraphQL Nexus](https://nexus.js.org/) via the [Nexus Prisma](https://www.nexusjs.org/#/components/schema/plugins/prisma) plugin.
 
 ## How to use
 
-### 1. Download example & install dependencies
-
-Clone the repository:
-
-```sh
-git clone git@github.com:prisma/photonjs.git
-```
+### 1. Clone this repo & install dependencies
 
 Install Node dependencies:
 
+`yarn` (recommended) or `npm install`
+
+### 2. Set up the database
+
+For this example, you'll use a simple [SQLite database](https://www.sqlite.org/index.html).
+
+**_Note_**: You can delete the migrations folder to create your own new migrations
+
+To set up your database, run:
+
 ```sh
-cd photonjs/examples/typescript/graphql-auth
-npm install
+yarn db:save --name 'init'
+yarn db:migrate
 ```
 
-### 2. Install the Prisma 2 CLI
+You can now use the [SQLite Browser](https://sqlitebrowser.org/) to view and edit your data in the `./prisma/dev.db` file that was created when you ran `yarn db:migrate`.
 
-To run the example, you need the [Prisma 2 CLI](https://github.com/prisma/prisma2/blob/master/docs/prisma-2-cli.md):
+### 3. Generate Photon (type-safe database client)
 
-```sh
-npm install -g prisma2
-```
-
-### 3. Set up database
-
-For this example, you'll use a simple [SQLite database](https://www.sqlite.org/index.html). To set up your database, run:
+Run the following command to generate [Prisma Client](https://www.prisma.io/docs/reference/tools-and-interfaces/prisma-client/generating-prisma-client):
 
 ```sh
-prisma2 lift save --name 'init'
-prisma2 lift up
-```
-
-You can now use the [SQLite Browser](https://sqlitebrowser.org/) to view and edit your data in the `./prisma/dev.db` file that was created when you ran `prisma2 lift up`.
-
-### 4. Generate Photon (type-safe database client)
-
-Run the following command to generate [Photon.js](https://photonjs.prisma.io/):
-
-```sh
-prisma2 generate
+yarn generate:prisma
 ```
 
 Now you can seed your database using the `seed` script from `package.json`:
 
 ```sh
-npm run seed
+yarn seed
 ```
 
-### 5. Start the GraphQL server
+### 4. Start the GraphQL server
 
 Launch your GraphQL server with this command:
 
 ```sh
-npm run start
+yarn dev
 ```
 
-Navigate to [http://localhost:4000](http://localhost:4000) in your browser to explore the API of your GraphQL server in a [GraphQL Playground](https://github.com/prisma/graphql-playground).
+Navigate to [http://localhost:4002](http://localhost:4002) in your browser to explore the API of your GraphQL server in a [GraphQL Playground](https://github.com/prisma-labs/graphql-playground).
 
-### 6. Using the GraphQL API
+### 5. Using the GraphQL API
 
 The schema that specifies the API operations of your GraphQL server is defined in [`./src/schema.graphql`](./src/schema.graphql). Below are a number of operations that you can send to the API using the GraphQL Playground.
 
@@ -132,8 +119,6 @@ With a real token, this looks similar to this:
 
 Inside the Playground, you can set HTTP headers in the bottom-left corner:
 
-![Screenshot of the GraphQL Playground showing the HTTP headers](https://imgur.com/ToRcCTj.png)
-
 Once you've set the header, you can send the following query to check whether the token is valid:
 
 ```graphql
@@ -146,103 +131,14 @@ Once you've set the header, you can send the following query to check whether th
 }
 ```
 
-#### Create a new draft
-
-You need to be logged in for this query to work, i.e. an authentication token that was retrieved through a `signup` or `login` mutation needs to be added to the `Authorization` header in the GraphQL Playground.
-
-```graphql
-mutation {
-  createDraft(
-    title: "Join the Prisma Slack"
-    content: "https://slack.prisma.io"
-  ) {
-    id
-    published
-  }
-}
-```
-
-#### Publish an existing draft
-
-You need to be logged in for this query to work, i.e. an authentication token that was retrieved through a `signup` or `login` mutation needs to be added to the `Authorization` header in the GraphQL Playground. The authentication token must belong to the user who created the post.
-
-```graphql
-mutation {
-  publish(id: "__POST_ID__") {
-    id
-    published
-  }
-}
-```
-
-> **Note**: You need to replace the `__POST_ID__`-placeholder with an actual `id` from a `Post` item. You can find one e.g. using the `filterPosts`-query.
-
-#### Search for posts with a specific title or content
-
-You need to be logged in for this query to work, i.e. an authentication token that was retrieved through a `signup` or `login` mutation needs to be added to the `Authorization` header in the GraphQL Playground.
-
-```graphql
-{
-  filterPosts(searchString: "graphql") {
-    id
-    title
-    content
-    published
-    author {
-      id
-      name
-      email
-    }
-  }
-}
-```
-
-#### Retrieve a single post
-
-You need to be logged in for this query to work, i.e. an authentication token that was retrieved through a `signup` or `login` mutation needs to be added to the `Authorization` header in the GraphQL Playground.
-
-```graphql
-{
-  post(id: "__POST_ID__") {
-    id
-    title
-    content
-    published
-    author {
-      id
-      name
-      email
-    }
-  }
-}
-```
-
-> **Note**: You need to replace the `__POST_ID__`-placeholder with an actual `id` from a `Post` item. You can find one e.g. using the `filterPosts`-query.
-
-#### Delete a post
-
-You need to be logged in for this query to work, i.e. an authentication token that was retrieved through a `signup` or `login` mutation needs to be added to the `Authorization` header in the GraphQL Playground. The authentication token must belong to the user who created the post.
-
-```graphql
-mutation {
-  deletePost(id: "__POST_ID__") {
-    id
-  }
-}
-```
-
-> **Note**: You need to replace the `__POST_ID__`-placeholder with an actual `id` from a `Post` item. You can find one e.g. using the `filterPosts`-query.
-
 </Details>
 
 ### 6. Changing the GraphQL schema
 
-To make changes to the GraphQL schema, you need to manipulate the [`Query`](./src/resolvers/Query.ts) and [`Mutation`](./src/resolvers/Mutation.ts) types.
+To make changes to the GraphQL schema, you need to manipulate the files in the resolvers folder.
 
-Note that the [`start`](./package.json#L6) script also starts a development server that automatically updates your schema every time you save a file. This way, the auto-generated [GraphQL schema](./src/generated/schema.graphql) updates whenever you make changes in to the `Query` or `Mutation` types inside your TypeScript code.
+Note that the [`dev`](./package.json#L6) script also starts a development server that automatically updates your schema every time you save a file. This way, the auto-generated [GraphQL schema](./src/schema.graphql) updates whenever you make changes in to the `Query` or `Mutation` types inside your TypeScript code.
 
 ## Next steps
 
-- Read the [Prisma 2 announcement](https://www.prisma.io/blog/announcing-prisma-2-zq1s745db8i5/)
-- Check out the [Prisma 2 docs](https://github.com/prisma/prisma2)
-- Share your feedback in the [`prisma2-preview`](https://prisma.slack.com/messages/CKQTGR6T0/) channel on the Prisma Slack
+- Check out the [Prisma 2 docs](https://www.prisma.io/docs/)
