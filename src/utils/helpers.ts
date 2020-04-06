@@ -1,17 +1,15 @@
-import { sign, verify } from 'jsonwebtoken'
+import { sign } from 'jsonwebtoken'
 import { APP_SECRET, tokens } from './constants'
-import { Token } from '../types'
-import { errors } from './errors'
 
 export const handleError = (error: any) => {
   // add any other logging mechanism here e.g. Sentry
   throw error
 }
 
-export const generateAccessToken = (userId: string) => {
+export const generateAccessToken = (userId: number) => {
   const accessToken = sign(
     {
-      userId,
+      userId: userId.toString(),
       type: tokens.access.name,
       timestamp: Date.now(),
     },
@@ -21,31 +19,4 @@ export const generateAccessToken = (userId: string) => {
     }
   )
   return accessToken
-}
-
-export const generateRefreshToken = (userId: string) => {
-  const refreshToken = sign(
-    {
-      userId,
-      type: tokens.refresh.name,
-      timestamp: Date.now(),
-    },
-    APP_SECRET,
-    {
-      expiresIn: tokens.refresh.expiry,
-    }
-  )
-  return refreshToken
-}
-
-export const validateRefreshToken = (token: string) => {
-  try {
-    const verifiedToken = verify(token, APP_SECRET) as Token
-    if (!verifiedToken && verifiedToken.type !== tokens.refresh.name) {
-      handleError(errors.notAuthenticated)
-    }
-    return verifiedToken.userId
-  } catch (e) {
-    handleError(errors.notAuthenticated)
-  }
 }

@@ -6,15 +6,9 @@ import { handleError } from './helpers'
 export const tokens = {
   access: {
     name: 'ACCESS_TOKEN',
-    expiry: '15m',
-  },
-  refresh: {
-    name: 'REFRESH_TOKEN',
-    expiry: '15d',
+    expiry: '1d',
   },
 }
-
-export const isDev = () => process.env.NODE_ENV === 'development'
 
 export const APP_SECRET = process.env.APP_SECRET
 

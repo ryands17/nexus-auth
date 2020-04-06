@@ -4,11 +4,8 @@ config()
 import { PrismaClient } from '@prisma/client'
 import { GraphQLServer } from 'graphql-yoga'
 import * as helmet from 'helmet'
-import * as cookieParser from 'cookie-parser'
 import { Context } from './types'
 import { permissions } from './permissions'
-import { errors } from './utils/errors'
-import { validateRefreshToken, generateAccessToken } from './utils/helpers'
 import { schema } from './schema'
 
 const PORT = process.env.PORT || 4002
@@ -18,34 +15,15 @@ const prisma = new PrismaClient()
 const server = new GraphQLServer({
   schema,
   middlewares: [permissions],
-  context: (request: any, response: any): Context => {
+  context: (request: any): Context => {
     return {
       ...request,
-      ...response,
       prisma,
     }
   },
 })
 
 server.express.use(helmet())
-server.express.use(cookieParser())
-
-server.express.post('/refresh-token', async (req, res) => {
-  try {
-    const { refreshToken } = req.cookies
-    const userId = validateRefreshToken(refreshToken)
-    const accessToken = generateAccessToken(userId)
-    res.json({
-      data: {
-        accessToken,
-      },
-    })
-  } catch (e) {
-    res.status(401).json({
-      message: errors.notAuthenticated,
-    })
-  }
-})
 
 server.start(
   {

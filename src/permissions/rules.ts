@@ -8,7 +8,7 @@ export const rules = {
       const userId = getUserId(ctx)
       return Boolean(userId)
     } catch (e) {
-      console.log(e)
+      return e
     }
   }),
   isPostOwner: rule()(async (_parent, { id }, ctx: Context) => {

@@ -1,10 +1,6 @@
 import { mutationField, stringArg } from 'nexus'
 import { compare, hash } from 'bcrypt'
-import {
-  generateAccessToken,
-  generateRefreshToken,
-  handleError,
-} from '../../utils/helpers'
+import { generateAccessToken, handleError } from '../../utils/helpers'
 import { errors } from '../../utils/errors'
 
 export const signup = mutationField('signup', {
@@ -24,13 +20,7 @@ export const signup = mutationField('signup', {
       },
     })
 
-    const [accessToken, refreshToken] = [
-      generateAccessToken(user.id),
-      generateRefreshToken(user.id),
-    ]
-    ctx.response.cookie('refreshToken', refreshToken, {
-      httpOnly: true,
-    })
+    const accessToken = generateAccessToken(user.id)
     return {
       accessToken,
       user,
@@ -61,13 +51,7 @@ export const login = mutationField('login', {
     const passwordValid = await compare(password, user.password)
     if (!passwordValid) handleError(errors.invalidUser)
 
-    const [accessToken, refreshToken] = [
-      generateAccessToken(user.id),
-      generateRefreshToken(user.id),
-    ]
-    ctx.response.cookie('refreshToken', refreshToken, {
-      httpOnly: true,
-    })
+    const accessToken = generateAccessToken(user.id)
     return {
       accessToken,
       user,
