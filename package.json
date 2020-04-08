@@ -32,7 +32,6 @@
   "devDependencies": {
     "@prisma/cli": "^2.0.0-beta.1",
     "@types/bcrypt": "3.0.0",
-    "@types/cookie-parser": "^1.4.2",
     "@types/dotenv": "^8.2.0",
     "@types/eslint": "^6.1.9",
     "@types/helmet": "^0.0.45",
