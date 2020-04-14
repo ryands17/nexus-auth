@@ -22,7 +22,7 @@
     "apollo-server": "^2.11.0",
     "bcrypt": "4.0.1",
     "dotenv": "^8.1.0",
-    "graphql-shield": "7.2.2",
+    "graphql-shield": "7.2.4",
     "graphql-yoga": "1.18.3",
     "helmet": "^3.22.0",
     "jsonwebtoken": "8.5.1",
