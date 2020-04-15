@@ -1,4 +1,4 @@
-import { queryField } from 'nexus'
+import { queryField } from '@nexus/schema'
 import { getUserId } from '../../utils/constants'
 
 export const me = queryField('me', {

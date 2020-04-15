@@ -5,7 +5,7 @@ import { PrismaClient } from '@prisma/client'
 import { GraphQLServer } from 'graphql-yoga'
 import * as helmet from 'helmet'
 import { Context } from './types'
-import { permissions } from './permissions'
+// import { permissions } from './permissions'
 import { schema } from './schema'
 
 const PORT = process.env.PORT || 4002
@@ -14,7 +14,7 @@ const prisma = new PrismaClient()
 
 const server = new GraphQLServer({
   schema,
-  middlewares: [permissions],
+  // middlewares: [permissions],
   context: (request: any): Context => {
     return {
       ...request,

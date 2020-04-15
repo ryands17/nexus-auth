@@ -1,5 +1,4 @@
-import { stringArg, idArg, queryField } from 'nexus'
-import { getUserId } from '../../utils/constants'
+import { stringArg, idArg, queryField } from '@nexus/schema'
 
 export const feed = queryField('feed', {
   type: 'Post',
@@ -18,7 +17,6 @@ export const filterPosts = queryField('filterPosts', {
     searchString: stringArg({ nullable: true }),
   },
   resolve: (_parent, { searchString }, ctx) => {
-    getUserId(ctx)
     return ctx.prisma.post.findMany({
       where: {
         OR: [

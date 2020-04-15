@@ -1,4 +1,4 @@
-import { idArg, stringArg, mutationField } from 'nexus'
+import { idArg, stringArg, mutationField } from '@nexus/schema'
 import { getUserId } from '../../utils/constants'
 
 export const createDraft = mutationField('createDraft', {

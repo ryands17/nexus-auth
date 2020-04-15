@@ -1,4 +1,4 @@
-import { mutationField, stringArg } from 'nexus'
+import { mutationField, stringArg } from '@nexus/schema'
 import { compare, hash } from 'bcrypt'
 import { generateAccessToken, handleError } from '../../utils/helpers'
 import { errors } from '../../utils/errors'

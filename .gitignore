@@ -10,3 +10,4 @@ src/schema.graphql
 node_modules
 .DS_Store
 query-engine*
+migrations/
