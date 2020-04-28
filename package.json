@@ -33,7 +33,7 @@
     "@types/bcrypt": "3.0.0",
     "@types/dotenv": "^8.2.0",
     "@types/eslint": "^6.1.9",
-    "@types/helmet": "^0.0.45",
+    "@types/helmet": "^0.0.46",
     "@types/jsonwebtoken": "8.3.9",
     "@types/node": "^13.11.0",
     "@types/rimraf": "^3.0.0",
