@@ -11,15 +11,15 @@
     "clean": "rimraf dist",
     "generate:prisma": "prisma generate",
     "generate:nexus": "ts-node --transpile-only ./src/schema",
-    "db:save": "prisma migrate save --experimental --name",
+    "db:save": "prisma migrate save --experimental",
     "db:migrate": "prisma migrate up --experimental",
     "studio": "prisma studio --experimental",
     "start": "cross-env NODE_ENV=production node dist/src/index.js"
   },
   "dependencies": {
     "@nexus/schema": "^0.13.1",
-    "@prisma/cli": "^2.0.0-beta.2",
-    "@prisma/client": "^2.0.0-beta.2",
+    "@prisma/cli": "^2.0.0-beta.3",
+    "@prisma/client": "^2.0.0-beta.3",
     "apollo-server": "^2.11.0",
     "bcrypt": "4.0.1",
     "dotenv": "^8.1.0",

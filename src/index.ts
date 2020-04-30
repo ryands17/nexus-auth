@@ -10,7 +10,9 @@ import { schema } from './schema'
 
 const PORT = process.env.PORT || 4002
 
-const prisma = new PrismaClient()
+const prisma = new PrismaClient({
+  log: ['query'],
+})
 
 const server = new GraphQLServer({
   schema,
