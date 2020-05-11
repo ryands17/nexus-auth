@@ -12,6 +12,8 @@ export const tokens = {
 
 export const APP_SECRET = process.env.APP_SECRET
 
+export const isDev = () => process.env.NODE_ENV === 'development'
+
 export const getUserId = (ctx: Context) => {
   const Authorization = ctx.req.get('Authorization')
   try {

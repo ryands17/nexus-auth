@@ -7,9 +7,9 @@ export const createDraft = mutationField('createDraft', {
     title: stringArg(),
     content: stringArg({ nullable: true }),
   },
-  resolve: (_parent, { title, content }, ctx) => {
+  resolve: async (_parent, { title, content }, ctx) => {
     const userId = getUserId(ctx)
-    return ctx.prisma.post.create({
+    const newPost = await ctx.prisma.post.create({
       data: {
         title,
         content,
@@ -17,6 +17,14 @@ export const createDraft = mutationField('createDraft', {
         author: { connect: { id: userId } },
       },
     })
+
+    const allPosts = await ctx.prisma.post.findMany({
+      first: 10,
+    })
+
+    ctx.pubsub.publish('latestPosts', allPosts)
+
+    return newPost
   },
 })
 
