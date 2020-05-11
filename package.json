@@ -32,15 +32,18 @@
     "@types/bcrypt": "3.0.0",
     "@types/dotenv": "^8.2.0",
     "@types/eslint": "^6.1.9",
-    "@types/helmet": "^0.0.46",
     "@types/jsonwebtoken": "8.3.9",
     "@types/node": "^13.11.0",
+    "@types/prettier": "^2.0.0",
     "@types/rimraf": "^3.0.0",
     "@typescript-eslint/eslint-plugin": "^2.26.0",
     "@typescript-eslint/parser": "^2.26.0",
     "cross-env": "^7.0.2",
     "eslint": "^6.4.0",
     "eslint-config-prettier": "^6.10.1",
+    "husky": ">=4",
+    "lint-staged": ">=10",
+    "prettier": "^2.0.5",
     "rimraf": "^3.0.0",
     "ts-node": "^8.8.2",
     "ts-node-dev": "1.0.0-pre.44",
@@ -49,7 +52,15 @@
   },
   "prettier": {
     "semi": false,
-    "singleQuote": true,
-    "trailingComma": "es5"
+    "singleQuote": true
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.ts": "eslint --cache --fix",
+    "*.{ts,js,json,md}": "prettier --write"
   }
 }
