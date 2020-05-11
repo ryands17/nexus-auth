@@ -4,7 +4,7 @@
 # nexus/prisma
 *.db
 dist/
-src/schema.graphql
+src/generated
 
 # misc
 node_modules

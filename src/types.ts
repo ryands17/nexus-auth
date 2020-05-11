@@ -1,10 +1,10 @@
 import { PrismaClient } from '@prisma/client'
-import { ContextParameters } from 'graphql-yoga/dist/types'
+import { Request, Response } from 'express'
 
 export interface Context {
   prisma: PrismaClient
-  request: ContextParameters['request']
-  response: ContextParameters['response']
+  req: Request
+  res: Response
 }
 
 export interface Token {

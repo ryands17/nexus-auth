@@ -12,8 +12,8 @@ export const tokens = {
 
 export const APP_SECRET = process.env.APP_SECRET
 
-export const getUserId = (context: Context) => {
-  const Authorization = context.request.get('Authorization')
+export const getUserId = (ctx: Context) => {
+  const Authorization = ctx.req.get('Authorization')
   try {
     const token = Authorization.replace('Bearer ', '')
     const verifiedToken = verify(token, APP_SECRET) as Token
