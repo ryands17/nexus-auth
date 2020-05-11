@@ -13,7 +13,7 @@ export const permissions = shield({
     deletePost: rules.isPostOwner,
     publish: rules.isPostOwner,
   },
-  // Subscription: {
-  //   latestPost: deny,
-  // },
+  Subscription: {
+    latestPost: rules.isAuthenticatedUser,
+  },
 })

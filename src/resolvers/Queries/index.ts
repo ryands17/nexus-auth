@@ -17,7 +17,6 @@ export const Query = {
 //     t.field('me', {
 //       type: 'User',
 //       resolve: (_, __, ctx: Context) => {
-//         const userId = getUserId(ctx)
 //         return ctx.prisma.users.findOne({
 //           where: {
 //             id: userId,
@@ -41,7 +40,6 @@ export const Query = {
 //         searchString: stringArg({ nullable: true }),
 //       },
 //       resolve: (_, { searchString }, ctx) => {
-//         getUserId(ctx)
 //         return ctx.prisma.posts.findMany({
 //           where: {
 //             OR: [

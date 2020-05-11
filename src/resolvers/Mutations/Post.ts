@@ -1,5 +1,4 @@
 import { idArg, stringArg, mutationField } from '@nexus/schema'
-import { getUserId } from '../../utils/constants'
 
 export const createDraft = mutationField('createDraft', {
   type: 'Post',
@@ -8,13 +7,12 @@ export const createDraft = mutationField('createDraft', {
     content: stringArg({ nullable: true }),
   },
   resolve: async (_parent, { title, content }, ctx) => {
-    const userId = getUserId(ctx)
     const newPost = await ctx.prisma.post.create({
       data: {
         title,
         content,
         published: false,
-        author: { connect: { id: userId } },
+        author: { connect: { id: ctx.userId } },
       },
     })
 

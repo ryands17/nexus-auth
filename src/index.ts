@@ -32,14 +32,3 @@ server.listen({ port: PORT }).then(({ url, subscriptionsUrl }) => {
   console.log(`🚀 Server ready at ${url}`)
   console.log(`🚀 Subscriptions ready at ${subscriptionsUrl}`)
 })
-
-// const server = new GraphQLServer({
-//   schema,
-//   middlewares: [permissions],
-//   context: (request: any): Context => {
-//     return {
-//       ...request,
-//       prisma,
-//     }
-//   },
-// })
