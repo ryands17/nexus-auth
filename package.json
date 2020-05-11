@@ -18,8 +18,7 @@
   },
   "dependencies": {
     "@nexus/schema": "^0.13.1",
-    "@prisma/cli": "^2.0.0-beta.3",
-    "@prisma/client": "^2.0.0-beta.3",
+    "@prisma/client": "^2.0.0-beta.4",
     "apollo-server": "^2.11.0",
     "bcrypt": "4.0.1",
     "dotenv": "^8.1.0",
@@ -30,6 +29,7 @@
     "nexus-prisma": "^0.12.0"
   },
   "devDependencies": {
+    "@prisma/cli": "^2.0.0-beta.4",
     "@types/bcrypt": "3.0.0",
     "@types/dotenv": "^8.2.0",
     "@types/eslint": "^6.1.9",
