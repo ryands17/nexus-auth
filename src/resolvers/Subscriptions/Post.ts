@@ -1,10 +1,9 @@
 import { subscriptionField } from '@nexus/schema'
 
-export const latestPosts = subscriptionField('latestPosts', {
+export const latestPost = subscriptionField('latestPost', {
   type: 'Post',
-  list: true,
   subscribe(_root, _args, ctx) {
-    return ctx.pubsub.asyncIterator('latestPosts')
+    return ctx.pubsub.asyncIterator('latestPost')
   },
   resolve(payload) {
     return payload

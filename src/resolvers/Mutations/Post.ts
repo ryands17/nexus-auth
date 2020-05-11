@@ -18,12 +18,7 @@ export const createDraft = mutationField('createDraft', {
       },
     })
 
-    const allPosts = await ctx.prisma.post.findMany({
-      first: 10,
-    })
-
-    ctx.pubsub.publish('latestPosts', allPosts)
-
+    ctx.pubsub.publish('latestPost', newPost)
     return newPost
   },
 })
