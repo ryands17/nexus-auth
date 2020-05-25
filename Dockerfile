@@ -1,12 +1,12 @@
-FROM node:10.18.0-stretch as BUILDER
+FROM node:12.16.3-stretch as BUILDER
 
 WORKDIR /app
 
 COPY . .
 
-RUN yarn && yarn build
+RUN yarn install --frozen-lockfile && yarn build
 
-FROM node:10.18.0-stretch-slim
+FROM node:12.16.3-stretch-slim
 
 WORKDIR /app
 

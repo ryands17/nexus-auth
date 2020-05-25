@@ -4,9 +4,9 @@
   "scripts": {
     "postinstall": "typesync",
     "predev": "npm run generate:prisma",
-    "dev": "cross-env NODE_ENV=development tsnd --no-notify --respawn --transpileOnly ./src",
-    "prebuild": "cross-env NODE_ENV=production npm run -s clean && npm run -s generate:prisma && npm run -s generate:nexus",
-    "build": "cross-env NODE_ENV=production tsc",
+    "dev": "cross-env NODE_ENV=production tsnd --no-notify --respawn --transpileOnly ./src",
+    "prebuild": "npm run -s clean && npm run -s generate:prisma && npm run -s generate:nexus",
+    "build": "tsc",
     "seed": "ts-node prisma/seed.ts",
     "clean": "rimraf dist",
     "generate:prisma": "prisma generate",
@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "@nexus/schema": "^0.13.1",
-    "@prisma/client": "^2.0.0-beta.4",
+    "@prisma/client": "2.0.0-beta.5",
     "apollo-server": "^2.13.0",
     "bcrypt": "4.0.1",
     "dotenv": "^8.1.0",
@@ -28,7 +28,7 @@
     "nexus-prisma": "^0.12.0"
   },
   "devDependencies": {
-    "@prisma/cli": "^2.0.0-beta.4",
+    "@prisma/cli": "2.0.0-beta.5",
     "@types/bcrypt": "3.0.0",
     "@types/dotenv": "^8.2.0",
     "@types/eslint": "^6.1.9",
