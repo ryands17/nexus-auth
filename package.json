@@ -28,7 +28,7 @@
     "nexus-prisma": "^0.12.0"
   },
   "devDependencies": {
-    "@prisma/cli": "2.0.0-beta.5",
+    "@prisma/cli": "2.0.0-beta.7",
     "@types/bcrypt": "3.0.0",
     "@types/dotenv": "^8.2.0",
     "@types/eslint": "^6.1.9",
