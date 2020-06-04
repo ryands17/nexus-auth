@@ -8,6 +8,7 @@ src/generated
 
 # misc
 node_modules
+.eslintcache
 .DS_Store
 query-engine*
 migrations/
