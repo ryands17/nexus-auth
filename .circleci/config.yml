@@ -1,0 +1,23 @@
+version: 2
+
+jobs:
+  build:
+    docker:
+      - image: circleci/node:12
+    steps:
+      - checkout
+      - restore_cache:
+          key: deps-{{ checksum "yarn.lock" }}
+      - run: yarn --frozen-lockfile
+      - save_cache:
+          key: deps-{{ checksum "yarn.lock" }}
+          paths:
+            - ./node_modules
+      - test: yarn test
+      - build: yarn build
+
+workflows:
+  version: 2
+  main_workflow:
+    jobs:
+      - build

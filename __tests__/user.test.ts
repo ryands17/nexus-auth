@@ -28,13 +28,12 @@ test('successfully create a user', async () => {
     password: 'user 1',
   }
   const data: any = await request(URL, createUser, user)
-  console.log('d', data)
 
   expect(data).toHaveProperty('signup')
   expect(data.signup.user.name).toEqual(user.name)
 })
 
-test('update a user', async () => {
+test('successfully get token on login', async () => {
   const credentials = {
     email: 'u1@g.com',
     password: 'user 1',

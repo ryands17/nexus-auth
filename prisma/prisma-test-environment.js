@@ -28,8 +28,6 @@ class PrismaTestEnvironment extends NodeEnvironment {
   async setup() {
     // Run the migrations to ensure our schema has the required structure
     await exec(`${prismaBinary} migrate up --experimental`)
-    await exec('ls -a')
-    console.log('migration upped')
 
     return super.setup()
   }
