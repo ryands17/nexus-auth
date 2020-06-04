@@ -13,4 +13,3 @@ coverage/
 .eslintcache
 .DS_Store
 query-engine*
-migrations/
