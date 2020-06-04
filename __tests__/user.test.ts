@@ -7,12 +7,16 @@ afterAll(async () => {
 })
 
 it('cannot create a user with an email address that is already in user', async () => {
-  await client.user.create({
-    data: {
-      email: 'foo@bar.com',
-      password: 'password',
-    },
+  const data = {
+    email: 'foo@bar.com',
+    password: 'password',
+  }
+  const user = await client.user.create({
+    data,
   })
+
+  expect(user).toHaveProperty('email')
+  expect(user.email).toEqual(data.email)
 
   expect(
     client.user.create({

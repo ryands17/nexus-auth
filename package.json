@@ -7,7 +7,7 @@
     "prebuild": "run-s clean generate:*",
     "build": "tsc",
     "lint": "eslint 'src/**/*.{js,ts}'",
-    "test": "dotenv -- jest",
+    "test": "jest",
     "seed": "ts-node prisma/seed.ts",
     "clean": "rimraf dist",
     "generate:prisma": "prisma generate",

@@ -11,19 +11,23 @@ export const signup = mutationField('signup', {
     password: stringArg({ required: true }),
   },
   resolve: async (_parent, { name, email, password }, ctx) => {
-    const hashedPassword = await hash(password, 10)
-    const user = await ctx.prisma.user.create({
-      data: {
-        name,
-        email,
-        password: hashedPassword,
-      },
-    })
+    try {
+      const hashedPassword = await hash(password, 10)
+      const user = await ctx.prisma.user.create({
+        data: {
+          name,
+          email,
+          password: hashedPassword,
+        },
+      })
 
-    const accessToken = generateAccessToken(user.id)
-    return {
-      accessToken,
-      user,
+      const accessToken = generateAccessToken(user.id)
+      return {
+        accessToken,
+        user,
+      }
+    } catch (e) {
+      handleError(errors.userAlreadyExists)
     }
   },
 })
