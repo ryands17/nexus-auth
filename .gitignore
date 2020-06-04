@@ -9,6 +9,7 @@ src/generated
 
 # misc
 node_modules
+coverage/
 .eslintcache
 .DS_Store
 query-engine*
