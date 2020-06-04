@@ -4,4 +4,5 @@ module.exports = {
   preset: 'ts-jest',
   testEnvironment: path.join(__dirname, 'prisma', 'prisma-test-environment.js'),
   testMatch: ['**/__tests__/**/*.{test,spec}.(ts|js)'],
+  setupFilesAfterEnv: ['./__tests__/setup.ts'],
 }

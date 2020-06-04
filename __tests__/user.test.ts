@@ -1,29 +1,45 @@
-import { PrismaClient } from '@prisma/client'
+import { request } from 'graphql-request'
 
-const client = new PrismaClient()
+const URL = 'http://localhost:8000/graphql'
 
-afterAll(async () => {
-  await client.disconnect()
+const createUser = /* GraphQL */ `
+  mutation createUser($name: String, $email: String!, $password: String!) {
+    signup(name: $name, email: $email, password: $password) {
+      user {
+        id
+        name
+      }
+    }
+  }
+`
+
+const login = /* GraphQL */ `
+  mutation login($email: String!, $password: String!) {
+    login(email: $email, password: $password) {
+      accessToken
+    }
+  }
+`
+
+test('successfully create a user', async () => {
+  const user = {
+    name: 'user 1',
+    email: 'u1@g.com',
+    password: 'user 1',
+  }
+  const data: any = await request(URL, createUser, user)
+
+  expect(data).toHaveProperty('signup')
+  expect(data.signup.user.name).toEqual(user.name)
 })
 
-it('cannot create a user with an email address that is already in user', async () => {
-  const data = {
-    email: 'foo@bar.com',
-    password: 'password',
+test('update a user', async () => {
+  const credentials = {
+    email: 'u1@g.com',
+    password: 'user 1',
   }
-  const user = await client.user.create({
-    data,
-  })
+  const data: any = await request(URL, login, credentials)
 
-  expect(user).toHaveProperty('email')
-  expect(user.email).toEqual(data.email)
-
-  expect(
-    client.user.create({
-      data: {
-        email: 'foo@bar.com',
-        password: 'password',
-      },
-    })
-  ).rejects.toThrow()
+  expect(data).toHaveProperty('login')
+  expect(data.login.accessToken).toBeDefined()
 })
