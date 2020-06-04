@@ -6,7 +6,7 @@
     "dev": "cross-env NODE_ENV=development tsnd --no-notify --respawn --transpileOnly ./src",
     "prebuild": "npm run -s clean && npm run -s generate:prisma && npm run -s generate:nexus",
     "build": "tsc",
-    "test": "jest",
+    "test": "dotenv -- jest",
     "seed": "ts-node prisma/seed.ts",
     "clean": "rimraf dist",
     "generate:prisma": "prisma generate",
