@@ -1,5 +1,7 @@
 # GraphQL Server with Authentication & Permissions using Prisma 2 beta and Nexus
 
+![Build Status](https://github.com/ryands17/nexus-auth/workflows/CI/badge.svg)
+
 This example shows how to implement a **GraphQL server with an email-password-based authentication workflow and authentication rules**, based on [Prisma](https://www.prisma.io/), [graphql-yoga](https://github.com/prisma-labs/graphql-yoga), [graphql-shield](https://github.com/maticzav/graphql-shield) & [GraphQL Nexus](https://nexus.js.org/) via the [Nexus Prisma](https://www.nexusjs.org/#/components/schema/plugins/prisma) plugin.
 
 ## How to use

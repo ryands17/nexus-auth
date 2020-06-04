@@ -2,6 +2,7 @@
   "name": "graphql-auth",
   "license": "MIT",
   "scripts": {
+    "postinstall": "run-s generate:*",
     "predev": "run-s generate:prisma",
     "dev": "cross-env NODE_ENV=development tsnd --no-notify --respawn --transpileOnly ./src",
     "prebuild": "run-s clean generate:*",
