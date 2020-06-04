@@ -28,6 +28,7 @@ test('successfully create a user', async () => {
     password: 'user 1',
   }
   const data: any = await request(URL, createUser, user)
+  console.log('d', data)
 
   expect(data).toHaveProperty('signup')
   expect(data.signup.user.name).toEqual(user.name)
