@@ -13,8 +13,8 @@ jobs:
           key: deps-{{ checksum "yarn.lock" }}
           paths:
             - ./node_modules
-      - test: yarn test
-      - build: yarn build
+      - run: yarn test
+      - run: yarn build
 
 workflows:
   version: 2
