@@ -31,7 +31,7 @@ jobs:
         run: yarn install --frozen-lockfile
 
       - name: Lint and Test
-        run: yarn lint & yarn test
+        run: yarn lint & yarn test --maxWorkers=2
         env:
           APP_SECRET: 'app_secret'
 
