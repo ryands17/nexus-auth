@@ -21,13 +21,13 @@ For this example, you'll use a simple [SQLite database](https://www.sqlite.org/i
 To set up your database, run:
 
 ```sh
-yarn db:save --name 'init'
+yarn db:save
 yarn db:migrate
 ```
 
 You can now use the [SQLite Browser](https://sqlitebrowser.org/) to view and edit your data in the `./prisma/dev.db` file that was created when you ran `yarn db:migrate`.
 
-### 3. Generate Photon (type-safe database client)
+### 3. Generate Prisma Client (type-safe database client)
 
 Run the following command to generate [Prisma Client](https://www.prisma.io/docs/reference/tools-and-interfaces/prisma-client/generating-prisma-client):
 
@@ -143,4 +143,8 @@ Note that the [`dev`](./package.json#L6) script also starts a development server
 
 ## Next steps
 
-- Check out the [Prisma 2 docs](https://www.prisma.io/docs/)
+### Testing
+
+Run `yarn test` or `npm run test` to run tests via Jest in the \***\*tests\*\*** folder.
+
+- Check out the [Prisma docs](https://www.prisma.io/docs/)

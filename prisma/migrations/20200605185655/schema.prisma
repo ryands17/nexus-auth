@@ -3,7 +3,7 @@ datasource db {
   url = "***"
 }
 
-generator photon {
+generator prisma {
   provider = "prisma-client-js"
 }
 

@@ -1,10 +1,3 @@
-// postgres
-// datasource pg {
-//   provider = "postgresql"
-//   url      = env("POSTGRESQL_URL")
-//   enabled  = false
-// }
-
 import { PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient()
 

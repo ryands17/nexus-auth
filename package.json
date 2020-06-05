@@ -9,7 +9,7 @@
     "build": "tsc",
     "lint": "eslint 'src/**/*.{js,ts}'",
     "test": "dotenv -e .env.test -- jest",
-    "seed": "ts-node prisma/seed.ts",
+    "seed": "dotenv -- ts-node prisma/seed.ts",
     "clean": "rimraf dist",
     "generate:prisma": "prisma generate",
     "generate:nexus": "ts-node --transpile-only ./src/schema",

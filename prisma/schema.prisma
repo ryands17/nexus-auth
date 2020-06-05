@@ -3,7 +3,7 @@ datasource db {
   url      = env("SQLITE_URL")
 }
 
-generator photon {
+generator prisma {
   provider = "prisma-client-js"
 }
 
