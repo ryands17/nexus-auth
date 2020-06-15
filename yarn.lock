@@ -958,10 +958,10 @@
   dependencies:
     "@types/yargs-parser" "*"
 
-"@types/yup@0.28.3":
-  version "0.28.3"
-  resolved "https://registry.yarnpkg.com/@types/yup/-/yup-0.28.3.tgz#387c35f9a6a36b8d3561f6601eb4e72518b92899"
-  integrity sha512-0Sir2LxOmupF8HBUvpJoZghLmOqKfZsBk1GYlMwSIccLDDUoN04LHvo0KzDp9qxt1IKf9Fudpj35SrJ8VqetkQ==
+"@types/yup@0.29.3":
+  version "0.29.3"
+  resolved "https://registry.yarnpkg.com/@types/yup/-/yup-0.29.3.tgz#5a85024796bffe0eb01601bfc180fe218356dba4"
+  integrity sha512-XxZFKnxzTfm+DR8MMBA35UUXfUPmjPpi8HJ90VZg7q/LIbtiOhVGJ26gNnATcflcpnIyf2Qm9A+oEhswaqoDpA==
 
 "@typescript-eslint/eslint-plugin@^2.26.0":
   version "2.34.0"
@@ -2957,14 +2957,14 @@ graphql-request@1.8.2:
   dependencies:
     cross-fetch "2.2.2"
 
-graphql-shield@7.3.0:
-  version "7.3.0"
-  resolved "https://registry.yarnpkg.com/graphql-shield/-/graphql-shield-7.3.0.tgz#d43510a37623bcf6b722cfbad5c84c0d62185b8a"
-  integrity sha512-8zg37zMXNXxPnSfSOJudDlqh2PQfmaBDqr/ztfB4R9H1u+WU6rihzoBNHzr+kzH/16SBSgp2FWqSleuVNwtVZA==
+graphql-shield@7.3.2:
+  version "7.3.2"
+  resolved "https://registry.yarnpkg.com/graphql-shield/-/graphql-shield-7.3.2.tgz#ecb8e2f2533a7dc5c1a67d79a928807014c9fa0d"
+  integrity sha512-LxFgVqY6hYa1mAO8BvRyS3vk9XkZsOOrpHrM35/wMNXqhF0pnJbdF788KSqMcxvdAL/dQYcTRhE8Mjgj7nacpQ==
   dependencies:
-    "@types/yup" "0.28.3"
+    "@types/yup" "0.29.3"
     object-hash "^2.0.3"
-    yup "^0.28.4"
+    yup "^0.29.0"
 
 graphql-subscriptions@^1.0.0:
   version "1.1.0"
@@ -6640,10 +6640,10 @@ yn@3.1.1:
   resolved "https://registry.yarnpkg.com/yn/-/yn-3.1.1.tgz#1e87401a09d767c1d5eab26a6e4c185182d2eb50"
   integrity sha512-Ux4ygGWsu2c7isFWe8Yu1YluJmqVhxqK2cLXNQA5AcC3QfbGNpM7fu0Y8b/z16pXLnFxZYvWhd3fhBY9DLmC6Q==
 
-yup@^0.28.4:
-  version "0.28.5"
-  resolved "https://registry.yarnpkg.com/yup/-/yup-0.28.5.tgz#85cabb4000d3623ef69be81551190692e631a8a5"
-  integrity sha512-7JZcvpUGUxMKoaEtcoMEM8lCWRaueGNH/A3EhL/UWqfbFm3uloiI+x59Yq4nzhbbYWUTwAsCteaZOJ+VbqI1uw==
+yup@^0.29.0:
+  version "0.29.1"
+  resolved "https://registry.yarnpkg.com/yup/-/yup-0.29.1.tgz#35d25aab470a0c3950f66040ba0ff4b1b6efe0d9"
+  integrity sha512-U7mPIbgfQWI6M3hZCJdGFrr+U0laG28FxMAKIgNvgl7OtyYuUoc4uy9qCWYHZjh49b8T7Ug8NNDdiMIEytcXrQ==
   dependencies:
     "@babel/runtime" "^7.9.6"
     fn-name "~3.0.0"
