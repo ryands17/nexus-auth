@@ -1,8 +1,8 @@
-# GraphQL Server with Authentication & Permissions using Prisma 2 beta and Nexus
+# GraphQL Server with Authentication Prisma 2 and Nexus Schema
 
 ![Build Status](https://github.com/ryands17/nexus-auth/workflows/CI/badge.svg)
 
-This example shows how to implement a **GraphQL server with an email-password-based authentication workflow and authentication rules**, based on [Prisma](https://www.prisma.io/), [graphql-yoga](https://github.com/prisma-labs/graphql-yoga), [graphql-shield](https://github.com/maticzav/graphql-shield) & [GraphQL Nexus](https://nexus.js.org/) via the [Nexus Prisma](https://www.nexusjs.org/#/components/schema/plugins/prisma) plugin.
+This example shows how to implement a **GraphQL server with an email-password-based auth**, based on [Prisma](https://www.prisma.io/), [apollo-server](https://www.apollographql.com/server/), [graphql-shield](https://github.com/maticzav/graphql-shield) & [Nexus Schema](https://www.nexusjs.org/#/components/schema/about) via the [Nexus Prisma](https://www.nexusjs.org/#/components/schema/plugins/prisma) plugin.
 
 ## How to use
 
@@ -14,7 +14,7 @@ Install Node dependencies:
 
 ### 2. Set up the database
 
-For this example, you'll use a simple [SQLite database](https://www.sqlite.org/index.html).
+This uses a simple [SQLite database](https://www.sqlite.org/index.html).
 
 **_Note_**: You can delete the migrations folder to create your own new migrations
 
@@ -53,7 +53,7 @@ Navigate to [http://localhost:4002](http://localhost:4002) in your browser to ex
 
 ### 5. Using the GraphQL API
 
-The schema that specifies the API operations of your GraphQL server is defined in [`./src/schema.graphql`](./src/schema.graphql). Below are a number of operations that you can send to the API using the GraphQL Playground.
+The schema that specifies the API operations of your GraphQL server is defined in [`./src/generated/schema.graphql`](./src/generated/schema.graphql). Below are a number of operations that you can send to the API using the GraphQL Playground.
 
 Feel free to adjust any operation by adding or removing fields. The GraphQL Playground helps you with its auto-completion and query validation features.
 
@@ -139,12 +139,10 @@ Once you've set the header, you can send the following query to check whether th
 
 To make changes to the GraphQL schema, you need to manipulate the files in the resolvers folder.
 
-Note that the [`dev`](./package.json#L6) script also starts a development server that automatically updates your schema every time you save a file. This way, the auto-generated [GraphQL schema](./src/schema.graphql) updates whenever you make changes in to the `Query` or `Mutation` types inside your TypeScript code.
-
 ## Next steps
 
 ### Testing
 
-Run `yarn test` or `npm run test` to run tests via Jest in the \***\*tests\*\*** folder.
+Run `yarn test` or `npm run test` to run tests via Jest in the **tests** folder.
 
 - Check out the [Prisma docs](https://www.prisma.io/docs/)
