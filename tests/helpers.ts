@@ -1,20 +1,22 @@
 import { server } from '../src/server'
 import { prisma } from '../src/utils/helpers'
 
-let URL = ''
+type Config = { url: string }
 
-beforeAll(async (done) => {
-  const { url } = await server.listen({ port: 0 })
-  URL = url
-  done()
-})
+export const getConfig = () => {
+  let config: any = {}
 
-afterAll(async (done) => {
-  await server.stop()
-  await prisma.disconnect()
-  done()
-})
+  beforeAll(async (done) => {
+    const { url } = await server.listen({ port: 0 })
+    config.url = url
+    done()
+  })
 
-export const getURL = () => {
-  return URL
+  afterAll(async (done) => {
+    await server.stop()
+    await prisma.disconnect()
+    done()
+  })
+
+  return config as Config
 }

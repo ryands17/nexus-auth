@@ -1,20 +1,21 @@
 import { request, GraphQLClient } from 'graphql-request'
 import { createUser, createDraft } from './graphql'
-import { getURL } from './helpers'
+import { getConfig } from './helpers'
 
 let token = ''
 
+const config = getConfig()
+
 test('authenticated user can create a post', async () => {
-  const URL = getURL()
   const user = {
     name: 'user 1',
     email: 'u1@g.com',
     password: 'user 1',
   }
-  const response: any = await request(URL, createUser, user)
+  const response: any = await request(config.url, createUser, user)
   token = response.signup.accessToken
 
-  const graphQLClient = new GraphQLClient(URL, {
+  const graphQLClient = new GraphQLClient(config.url, {
     headers: {
       authorization: `Bearer ${token}`,
     },
