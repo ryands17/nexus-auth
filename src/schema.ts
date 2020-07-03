@@ -5,6 +5,8 @@ import * as allTypes from './resolvers'
 import { Context } from './types'
 
 const nexusPrisma = nexusPrismaPlugin({
+  experimentalCRUD: true,
+  paginationStrategy: 'prisma',
   prismaClient: (ctx: Context) => ctx.prisma,
 })
 
