@@ -1,10 +1,10 @@
-import { nexusPrismaPlugin } from 'nexus-prisma'
+import { nexusSchemaPrisma } from 'nexus-plugin-prisma/schema'
 import { makeSchema } from '@nexus/schema'
 import { join } from 'path'
 import * as allTypes from './resolvers'
 import { Context } from './types'
 
-const nexusPrisma = nexusPrismaPlugin({
+const nexusPrisma = nexusSchemaPrisma({
   experimentalCRUD: true,
   paginationStrategy: 'prisma',
   prismaClient: (ctx: Context) => ctx.prisma,
