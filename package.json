@@ -16,7 +16,7 @@
     "db:save": "dotenv -- prisma migrate save --experimental",
     "db:migrate": "dotenv -- prisma migrate up --experimental",
     "prisma": "dotenv -- prisma",
-    "start": "cross-env NODE_ENV=production node dist/src/index.js"
+    "start": "cross-env NODE_ENV=production node dist/index.js"
   },
   "dependencies": {
     "@nexus/schema": "^0.14.0",

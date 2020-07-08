@@ -1,17 +1,15 @@
-FROM node:12.16.3-stretch as BUILDER
+FROM node:12.18.2-alpine
 
 WORKDIR /app
+
+COPY package.json yarn.lock ./
+
+RUN apk add --no-cache --virtual .build-deps alpine-sdk python \
+  && yarn install --frozen-lockfile
 
 COPY . .
 
-RUN yarn install --frozen-lockfile && yarn build
+RUN yarn build \
+  && apk del .build-deps
 
-FROM node:12.16.3-stretch-slim
-
-WORKDIR /app
-
-COPY --from=BUILDER /app ./
-
-EXPOSE 4002
-
-CMD ["node", "dist/src/index.js"]
+CMD [ "yarn",  "start" ]

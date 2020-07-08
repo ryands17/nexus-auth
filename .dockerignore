@@ -1,7 +1,5 @@
-node_modules
+node_modules/
+.vscode/
+dist/
 
 .DS_Store
-query-engine*
-
-.env
-dist/
