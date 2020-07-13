@@ -6999,10 +6999,10 @@ ts-jest@^26.1.0:
     semver "7.x"
     yargs-parser "18.x"
 
-ts-node-dev@1.0.0-pre.50:
-  version "1.0.0-pre.50"
-  resolved "https://registry.yarnpkg.com/ts-node-dev/-/ts-node-dev-1.0.0-pre.50.tgz#ee19d2658a8ada84efc6962850e6e941d9372f25"
-  integrity sha512-J1TzHLPejsfwKwvlCrk1MjDt3kXfE9mRa2YpAI4B9Ei+qbaIytkUR2Cx5Zv64f1EFW9XkDZiIMSLmV4NAhC72Q==
+ts-node-dev@1.0.0-pre.51:
+  version "1.0.0-pre.51"
+  resolved "https://registry.yarnpkg.com/ts-node-dev/-/ts-node-dev-1.0.0-pre.51.tgz#841c41b927363bce0a630e443a7c626926636e8f"
+  integrity sha512-b+OMsGtxYDsPPN2CMKcIYSwffTSDFB4pzna+10mTwIvl6DLw04ge9VfyTycfKEQ2ZSWt+ecWCylNfZJIyUWs/Q==
   dependencies:
     chokidar "^3.4.0"
     dateformat "~1.0.4-1.2.3"
@@ -7132,9 +7132,10 @@ typesync@^0.7.0:
     ora "^4.0.4"
     semver "^7.3.2"
 
-"undici@github:mcollina/undici":
+undici@mcollina/undici:
   version "1.1.0"
-  resolved "https://codeload.github.com/mcollina/undici/tar.gz/75de95ab227e0fc96c36b91e3112c7960d5c292e"
+  uid d448757be9b20192c1ee66a8cd2c56154e3209dc
+  resolved "https://codeload.github.com/mcollina/undici/tar.gz/d448757be9b20192c1ee66a8cd2c56154e3209dc"
 
 union-value@^1.0.0:
   version "1.0.1"
