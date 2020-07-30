@@ -4,7 +4,7 @@
   "scripts": {
     "postinstall": "run-s generate:*",
     "predev": "run-s generate:prisma",
-    "dev": "cross-env NODE_ENV=development tsnd --no-notify --respawn --transpileOnly ./src",
+    "dev": "cross-env NODE_ENV=development tsnd --no-notify --respawn --transpile-only ./src",
     "prebuild": "run-s clean generate:*",
     "build": "tsc",
     "lint": "eslint 'src/**/*.{js,ts}'",
