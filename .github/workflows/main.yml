@@ -28,7 +28,7 @@ jobs:
             nodeModules-
 
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: yarn install --frozen-lockfile && yarn prebuild
 
       - name: Lint and Test
         run: yarn lint & yarn test --maxWorkers=2
