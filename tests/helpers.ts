@@ -14,7 +14,7 @@ export const getConfig = () => {
 
   afterAll(async (done) => {
     await server.stop()
-    await prisma.disconnect()
+    await prisma.$disconnect()
     done()
   })
 
