@@ -19,8 +19,8 @@ class PrismaTestEnvironment extends NodeEnvironment {
 
     // Generate a unique sqlite identifier for this test context
     this.dbName = `test_${nanoid()}.db`
-    process.env.SQLITE_URL = `file:${this.dbName}`
-    this.global.process.env.SQLITE_URL = `file:${this.dbName}`
+    process.env.DB_URL = `file:${this.dbName}`
+    this.global.process.env.DB_URL = `file:${this.dbName}`
     this.dbPath = path.join(__dirname, this.dbName)
     fs.closeSync(fs.openSync(this.dbPath, 'w'))
   }

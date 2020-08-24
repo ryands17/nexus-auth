@@ -1,4 +1,4 @@
-import { idArg, stringArg, mutationField } from '@nexus/schema'
+import { stringArg, mutationField, intArg } from '@nexus/schema'
 
 export const createDraft = mutationField('createDraft', {
   type: 'Post',
@@ -24,7 +24,7 @@ export const createDraft = mutationField('createDraft', {
 export const deletePost = mutationField('deletePost', {
   type: 'Post',
   nullable: true,
-  args: { id: idArg() },
+  args: { id: intArg() },
   resolve: (_parent, { id }, ctx) => {
     return ctx.prisma.post.delete({
       where: {
@@ -37,7 +37,7 @@ export const deletePost = mutationField('deletePost', {
 export const publish = mutationField('publish', {
   type: 'Post',
   nullable: true,
-  args: { id: idArg() },
+  args: { id: intArg() },
   resolve: (_parent, { id }, ctx) => {
     return ctx.prisma.post.update({
       where: { id },

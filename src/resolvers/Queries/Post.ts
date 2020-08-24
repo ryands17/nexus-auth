@@ -1,4 +1,4 @@
-import { stringArg, idArg, queryField } from '@nexus/schema'
+import { stringArg, queryField, intArg } from '@nexus/schema'
 
 export const feed = queryField('feed', {
   type: 'Post',
@@ -39,7 +39,7 @@ export const filterPosts = queryField('filterPosts', {
 export const post = queryField('post', {
   type: 'Post',
   nullable: true,
-  args: { id: idArg() },
+  args: { id: intArg() },
   resolve: (_parent, { id }, ctx) => {
     return ctx.prisma.post.findOne({
       where: {
