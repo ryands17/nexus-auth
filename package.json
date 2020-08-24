@@ -53,7 +53,7 @@
     "rimraf": "^3.0.0",
     "ts-jest": "^26.1.4",
     "ts-node": "^9.0.0",
-    "ts-node-dev": "1.0.0-pre.57",
+    "ts-node-dev": "1.0.0-pre.60",
     "typescript": "3.9.7",
     "typesync": "^0.7.0"
   },
