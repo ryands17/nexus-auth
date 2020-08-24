@@ -12,8 +12,8 @@
     "clean": "rimraf dist",
     "generate:prisma": "prisma generate",
     "generate:nexus": "ts-node --transpile-only ./src/schema",
-    "db:save": "dotenv -- prisma migrate save --experimental",
-    "db:migrate": "dotenv -- prisma migrate up --experimental",
+    "db:save": "yarn prisma migrate save --experimental",
+    "db:migrate": "yarn prisma migrate up --experimental",
     "prisma": "dotenv -- prisma",
     "start": "cross-env NODE_ENV=production node dist/index.js"
   },

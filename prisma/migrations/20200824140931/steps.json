@@ -21,7 +21,7 @@
         "source": "db"
       },
       "argument": "url",
-      "value": "env(\"SQLITE_URL\")"
+      "value": "\"***\""
     },
     {
       "tag": "CreateModel",
@@ -31,7 +31,7 @@
       "tag": "CreateField",
       "model": "Post",
       "field": "id",
-      "type": "String",
+      "type": "Int",
       "arity": "Required"
     },
     {
@@ -57,7 +57,7 @@
         "directive": "default"
       },
       "argument": "",
-      "value": "cuid()"
+      "value": "autoincrement()"
     },
     {
       "tag": "CreateDirective",
@@ -76,6 +76,31 @@
       "field": "published",
       "type": "Boolean",
       "arity": "Required"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "Post",
+          "field": "published"
+        },
+        "directive": "default"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "Post",
+          "field": "published"
+        },
+        "directive": "default"
+      },
+      "argument": "",
+      "value": "false"
     },
     {
       "tag": "CreateField",

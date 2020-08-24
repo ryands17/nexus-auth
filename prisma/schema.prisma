@@ -1,16 +1,16 @@
 datasource db {
   provider = "sqlite"
-  url      = env("SQLITE_URL")
+  url      = env("DB_URL")
 }
 
 generator prisma {
-  provider             = "prisma-client-js"
-  binaryTargets        = ["native", "linux-musl"]
-  experimentalFeatures = ["connectOrCreate", "transactionApi"]
+  provider        = "prisma-client-js"
+  binaryTargets   = ["native", "linux-musl"]
+  previewFeatures = ["connectOrCreate", "transactionApi"]
 }
 
 model Post {
-  id        String   @default(cuid()) @id
+  id        Int      @default(autoincrement()) @id
   published Boolean  @default(false)
   title     String
   content   String?
