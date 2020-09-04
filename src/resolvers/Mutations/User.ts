@@ -1,7 +1,7 @@
 import { mutationField, stringArg } from '@nexus/schema'
 import { compare, hash } from 'bcrypt'
 import { generateAccessToken, handleError } from '../../utils/helpers'
-import { errors } from '../../utils/errors'
+import { errors } from '../../utils/constants'
 
 export const signup = mutationField('signup', {
   type: 'AuthPayload',

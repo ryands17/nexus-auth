@@ -3,7 +3,7 @@ config()
 
 import { ApolloServer } from 'apollo-server'
 import { applyMiddleware } from 'graphql-middleware'
-import { permissions } from './permissions'
+import { permissions } from './utils/rules'
 import { schema } from './schema'
 import { isDev } from './utils/constants'
 import { createContext } from './utils/helpers'
