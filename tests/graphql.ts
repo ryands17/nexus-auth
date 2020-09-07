@@ -20,7 +20,7 @@ export const login = /* GraphQL */ `
 
 export const createDraft = /* GraphQL */ `
   mutation createDraft($title: String!, $content: String!) {
-    createDraft(title: $title, content: $content) {
+    createDraft(data: { title: $title, content: $content }) {
       title
       published
     }
