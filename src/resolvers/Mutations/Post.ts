@@ -5,6 +5,17 @@ export const post = extendType({
   definition(t) {
     t.crud.createOnePost({
       alias: 'createDraft',
+      async resolve(root, args, ctx, info, originalResolve) {
+        args = {
+          ...args,
+          data: {
+            ...args.data,
+            author: { connect: { id: ctx.userId } },
+          },
+        }
+        const res = await originalResolve(root, args, ctx, info)
+        return res
+      },
     })
 
     t.crud.deleteOnePost({ alias: 'deletePost' })
