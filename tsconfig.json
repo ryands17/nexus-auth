@@ -3,7 +3,6 @@
     "sourceMap": true,
     "module": "commonjs",
     "target": "ES2018",
-    "rootDir": "./src",
     "outDir": "dist",
     "lib": ["esnext", "dom"],
     // "strict": true,
@@ -12,6 +11,7 @@
     "alwaysStrict": true,
     "strictBindCallApply": true,
     "strictFunctionTypes": true,
+    "esModuleInterop": true,
     "skipLibCheck": true,
     "noUnusedParameters": false
   },
