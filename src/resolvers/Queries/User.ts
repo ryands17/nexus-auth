@@ -2,11 +2,12 @@ import { queryField } from '@nexus/schema'
 
 export const me = queryField('me', {
   type: 'User',
-  resolve(_parent, _args, ctx) {
-    return ctx.prisma.user.findOne({
+  async resolve(_parent, _args, ctx) {
+    const user = await ctx.prisma.user.findOne({
       where: {
         id: ctx.userId,
       },
     })
+    return user
   },
 })
