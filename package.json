@@ -25,7 +25,7 @@
     "graphql-middleware": "^4.0.2",
     "graphql-shield": "7.3.6",
     "jsonwebtoken": "8.5.1",
-    "nexus-plugin-prisma": "^0.18.1"
+    "nexus-plugin-prisma": "^0.19.0"
   },
   "devDependencies": {
     "@types/bcrypt": "3.0.0",
