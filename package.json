@@ -18,7 +18,7 @@
     "prisma": "dotenv -- prisma"
   },
   "dependencies": {
-    "@nexus/schema": "^0.15.0",
+    "@nexus/schema": "^0.16.0",
     "apollo-server": "^2.13.0",
     "bcrypt": "5.0.0",
     "dotenv": "^8.1.0",
