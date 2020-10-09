@@ -19,7 +19,7 @@
     },
     {
       "packagePatterns": ["^jest", "ts-jest"],
-      "groupName": "eslint"
+      "groupName": "test-utils"
     }
   ]
 }
