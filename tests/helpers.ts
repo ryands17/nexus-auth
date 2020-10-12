@@ -1,5 +1,9 @@
 import { server } from '../src/server'
 import { prisma } from '../src/utils/helpers'
+import { Headers } from 'cross-fetch'
+
+// @ts-ignore
+global.Headers = global.Headers || Headers
 
 type Config = { url: string }
 
