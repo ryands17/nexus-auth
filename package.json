@@ -28,8 +28,8 @@
     "nexus-plugin-prisma": "^0.21.0"
   },
   "devDependencies": {
-    "@prisma/cli": "2.8.1",
-    "@prisma/client": "2.8.1",
+    "@prisma/cli": "2.9.0",
+    "@prisma/client": "2.9.0",
     "@types/bcrypt": "3.0.0",
     "@types/dotenv": "^8.2.0",
     "@types/eslint": "^7.2.4",
