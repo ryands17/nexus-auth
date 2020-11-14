@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@nexus/schema": "0.18.0",
-    "apollo-server": "2.18.2",
+    "apollo-server": "2.19.0",
     "bcrypt": "5.0.0",
     "dotenv": "8.2.0",
     "graphql-middleware": "4.0.2",
