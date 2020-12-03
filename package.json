@@ -18,18 +18,18 @@
     "prisma": "dotenv -- prisma"
   },
   "dependencies": {
-    "@nexus/schema": "0.18.0",
+    "@nexus/schema": "0.19.2",
     "apollo-server": "2.19.0",
     "bcrypt": "5.0.0",
     "dotenv": "8.2.0",
     "graphql-middleware": "4.0.2",
     "graphql-shield": "7.4.2",
     "jsonwebtoken": "8.5.1",
-    "nexus-plugin-prisma": "0.24.0"
+    "nexus-plugin-prisma": "0.25.0"
   },
   "devDependencies": {
-    "@prisma/cli": "2.10.2",
-    "@prisma/client": "2.10.2",
+    "@prisma/cli": "2.12.1",
+    "@prisma/client": "2.12.1",
     "@types/bcrypt": "3.0.0",
     "@types/dotenv": "8.2.0",
     "@types/eslint": "7.2.5",
@@ -40,7 +40,7 @@
     "@types/rimraf": "3.0.0",
     "@typescript-eslint/eslint-plugin": "4.8.2",
     "@typescript-eslint/parser": "4.8.2",
-    "cross-env": "7.0.2",
+    "cross-env": "7.0.3",
     "dotenv-cli": "4.0.0",
     "eslint": "7.14.0",
     "eslint-config-prettier": "6.15.0",
@@ -49,12 +49,12 @@
     "jest": "26.6.3",
     "jest-environment-node": "26.6.2",
     "lint-staged": "10.5.2",
-    "nanoid": "3.1.18",
+    "nanoid": "3.1.20",
     "npm-run-all": "4.1.5",
     "prettier": "2.2.1",
     "rimraf": "3.0.2",
     "ts-jest": "26.4.4",
-    "ts-node": "9.0.0",
+    "ts-node": "9.1.0",
     "ts-node-dev": "1.0.0",
     "typescript": "4.1.2",
     "typesync": "0.8.0"

@@ -1,4 +1,4 @@
-import { stringArg, extendType } from '@nexus/schema'
+import { stringArg, extendType, nonNull } from '@nexus/schema'
 import { compare, hash } from 'bcrypt'
 import { generateAccessToken, handleError } from '../../utils/helpers'
 import { errors } from '../../utils/constants'
@@ -9,9 +9,9 @@ export const user = extendType({
     t.field('signup', {
       type: 'AuthPayload',
       args: {
-        name: stringArg({ nullable: true }),
-        email: stringArg({ required: true }),
-        password: stringArg({ required: true }),
+        name: stringArg(),
+        email: nonNull(stringArg()),
+        password: nonNull(stringArg()),
       },
       async resolve(_parent, { name, email, password }, ctx) {
         try {
@@ -38,13 +38,13 @@ export const user = extendType({
     t.field('login', {
       type: 'AuthPayload',
       args: {
-        email: stringArg({ required: true }),
-        password: stringArg({ required: true }),
+        email: nonNull(stringArg()),
+        password: nonNull(stringArg()),
       },
       async resolve(_parent, { email, password }, ctx) {
         let user = null
         try {
-          user = await ctx.prisma.user.findOne({
+          user = await ctx.prisma.user.findUnique({
             where: {
               email,
             },
