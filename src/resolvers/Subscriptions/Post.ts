@@ -5,6 +5,7 @@ export const latestPost = subscriptionField('latestPost', {
   subscribe(_root, _args, ctx) {
     return ctx.pubsub.asyncIterator('latestPost')
   },
+  // @ts-ignore
   resolve(payload) {
     return payload
   },
