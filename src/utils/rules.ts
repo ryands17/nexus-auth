@@ -20,7 +20,7 @@ export const rules = {
     async (_parent, { id }, ctx: Context) => {
       try {
         const author = await ctx.prisma.post
-          .findOne({
+          .findUnique({
             where: {
               id,
             },

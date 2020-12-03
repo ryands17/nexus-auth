@@ -1,12 +1,12 @@
 import { subscriptionField } from '@nexus/schema'
+import { Prisma } from '@prisma/client'
 
 export const latestPost = subscriptionField('latestPost', {
   type: 'Post',
   subscribe(_root, _args, ctx) {
     return ctx.pubsub.asyncIterator('latestPost')
   },
-  // @ts-ignore
   resolve(payload) {
-    return payload
+    return payload as Prisma.PostGetPayload<{}>
   },
 })
