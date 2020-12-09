@@ -3,11 +3,11 @@
   "masterIssue": true,
   "automerge": true,
   "schedule": ["every weekend"],
-  "ignoreDeps": ["@prisma/client", "@prisma/cli", "graphql-request"],
+  "ignoreDeps": ["graphql-request"],
   "packageRules": [
     {
-      "packagePatterns": [".*nexus"],
-      "groupName": "nexus"
+      "packagePatterns": [".*nexus", "@prisma/*"],
+      "groupName": "nexus-and-prisma"
     },
     {
       "packagePatterns": ["^@types/", "typesync"],

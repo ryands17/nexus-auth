@@ -5,14 +5,6 @@ const NodeEnvironment = require('jest-environment-node')
 const { nanoid } = require('nanoid')
 const exec = util.promisify(require('child_process').exec)
 
-const prismaBinary = path.join(
-  __dirname,
-  '..',
-  'node_modules',
-  '.bin',
-  'prisma'
-)
-
 class PrismaTestEnvironment extends NodeEnvironment {
   constructor(config) {
     super(config)
@@ -27,7 +19,7 @@ class PrismaTestEnvironment extends NodeEnvironment {
 
   async setup() {
     // Run the migrations to ensure our schema has the required structure
-    await exec(`${prismaBinary} migrate up --experimental`)
+    await exec(`yarn db:migrate:prod`)
 
     return super.setup()
   }
