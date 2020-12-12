@@ -56,7 +56,7 @@
     "rimraf": "3.0.2",
     "ts-jest": "26.4.4",
     "ts-node": "9.1.1",
-    "ts-node-dev": "1.0.0",
+    "ts-node-dev": "1.1.1",
     "typescript": "4.1.2",
     "typesync": "0.8.0"
   },
