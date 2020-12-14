@@ -1,4 +1,4 @@
-FROM node:12.18.4-alpine
+FROM node:12-alpine
 
 WORKDIR /app
 
@@ -12,5 +12,7 @@ COPY . .
 
 RUN yarn build \
   && apk del .build-deps
+
+EXPOSE 4002
 
 CMD [ "yarn",  "start" ]
