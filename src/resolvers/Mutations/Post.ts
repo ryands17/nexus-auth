@@ -1,4 +1,4 @@
-import { intArg, extendType } from '@nexus/schema'
+import { intArg, extendType } from 'nexus'
 
 export const post = extendType({
   type: 'Mutation',

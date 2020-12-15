@@ -1,4 +1,4 @@
-import { stringArg, extendType, nonNull } from '@nexus/schema'
+import { stringArg, extendType, nonNull } from 'nexus'
 import { compare, hash } from 'bcrypt'
 import { generateAccessToken, handleError } from '../../utils/helpers'
 import { errors } from '../../utils/constants'
