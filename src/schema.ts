@@ -22,5 +22,13 @@ export const schema = makeSchema({
     export: 'Context',
     alias: 'ctx',
   },
+  sourceTypes: {
+    modules: [
+      {
+        module: require.resolve('.prisma/client/index.d.ts'),
+        alias: 'prisma',
+      },
+    ],
+  },
   prettierConfig: join(process.cwd(), 'package.json'),
 })
