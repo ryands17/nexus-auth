@@ -36,7 +36,7 @@
     "@types/eslint": "7.2.6",
     "@types/jest": "26.0.19",
     "@types/jsonwebtoken": "8.5.0",
-    "@types/node": "14.14.13",
+    "@types/node": "14.14.14",
     "@types/prettier": "2.1.5",
     "@types/rimraf": "3.0.0",
     "@typescript-eslint/eslint-plugin": "4.10.0",
