@@ -18,7 +18,13 @@ export const post = extendType({
       },
     })
 
-    t.crud.deleteOnePost({ alias: 'deletePost' })
+    t.nullable.field('deletePost', {
+      type: 'Post',
+      args: { id: intArg() },
+      async resolve(_parent, { id }, ctx) {
+        return ctx.prisma.post.delete({ where: { id } })
+      },
+    })
 
     t.nullable.field('publish', {
       type: 'Post',
