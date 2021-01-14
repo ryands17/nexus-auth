@@ -26,3 +26,12 @@ export const createDraft = /* GraphQL */ `
     }
   }
 `
+
+export const deleteDraft = /* GraphQL */ `
+  mutation deleteDraft($id: Int!) {
+    deletePost(id: $id) {
+      id
+      title
+    }
+  }
+`

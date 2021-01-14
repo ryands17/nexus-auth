@@ -1,5 +1,5 @@
 import { request, GraphQLClient } from 'graphql-request'
-import { createUser, createDraft } from './graphql'
+import { createUser, createDraft, deleteDraft } from './graphql'
 import { getConfig } from './helpers'
 
 let token = ''
@@ -28,4 +28,18 @@ test('authenticated user can create a post', async () => {
 
   expect(post).toHaveProperty('createDraft')
   expect(post.createDraft.published).toBeFalsy()
+})
+
+test('same authenticated user can delete a post', async () => {
+  const graphQLClient = new GraphQLClient(config.url, {
+    headers: {
+      authorization: `Bearer ${token}`,
+    },
+  })
+
+  const post: any = await graphQLClient.request(deleteDraft, {
+    id: 1,
+  })
+
+  expect(post).toBeDefined()
 })
