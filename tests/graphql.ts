@@ -27,9 +27,9 @@ export const createDraft = /* GraphQL */ `
   }
 `
 
-export const deleteDraft = /* GraphQL */ `
-  mutation deleteDraft($id: Int!) {
-    deletePost(id: $id) {
+export const deletePost = /* GraphQL */ `
+  mutation deletePost($where: PostWhereUniqueInput!) {
+    deletePost(where: $where) {
       id
       title
     }

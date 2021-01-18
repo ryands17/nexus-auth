@@ -1,5 +1,5 @@
 import { request, GraphQLClient } from 'graphql-request'
-import { createUser, createDraft, deleteDraft } from './graphql'
+import { createUser, createDraft, deletePost } from './graphql'
 import { getConfig } from './helpers'
 
 let token = ''
@@ -37,8 +37,8 @@ test('same authenticated user can delete a post', async () => {
     },
   })
 
-  const post: any = await graphQLClient.request(deleteDraft, {
-    id: 1,
+  const post: any = await graphQLClient.request(deletePost, {
+    where: { id: 1 },
   })
 
   expect(post).toBeDefined()

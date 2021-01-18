@@ -17,7 +17,8 @@ export const rules = {
     }
   ),
   isPostOwner: rule({ cache: 'contextual' })(
-    async (_parent, { id }, ctx: Context) => {
+    async (_parent, args, ctx: Context) => {
+      let id = args.where ? args.where.id : args.id
       try {
         const author = await ctx.prisma.post
           .findUnique({
