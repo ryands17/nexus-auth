@@ -6,7 +6,7 @@
   "ignoreDeps": ["graphql-request"],
   "packageRules": [
     {
-      "packagePatterns": [".*nexus", "@prisma/*"],
+      "packagePatterns": [".*nexus", "prisma*"],
       "groupName": "nexus-and-prisma"
     },
     {

@@ -38,7 +38,7 @@ test('same authenticated user can delete a post', async () => {
   })
 
   const post: any = await graphQLClient.request(deletePost, {
-    where: { id: 1 },
+    id: 1,
   })
 
   expect(post).toBeDefined()

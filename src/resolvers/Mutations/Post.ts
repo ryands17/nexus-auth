@@ -1,24 +1,27 @@
-import { intArg, extendType } from 'nexus'
+import { intArg, extendType, nonNull, stringArg } from 'nexus'
 
 export const post = extendType({
   type: 'Mutation',
   definition(t) {
-    t.crud.createOnePost({
-      alias: 'createDraft',
-      async resolve(root, args, ctx, info, originalResolve) {
-        args = {
+    t.field('createDraft', {
+      type: 'Post',
+      args: { title: nonNull(stringArg()), content: stringArg() },
+      resolve(_parent, args, ctx) {
+        const data = {
           ...args,
-          data: {
-            ...args.data,
-            author: { connect: { id: ctx.userId } },
-          },
+          author: { connect: { id: ctx.userId } },
         }
-        const res = await originalResolve(root, args, ctx, info)
-        return res
+        return ctx.prisma.post.create({ data })
       },
     })
 
-    t.crud.deleteOnePost({ alias: 'deletePost' })
+    t.field('deletePost', {
+      type: 'Post',
+      args: { id: nonNull(intArg()) },
+      resolve(_parent, args, ctx) {
+        return ctx.prisma.post.delete({ where: { id: args.id } })
+      },
+    })
 
     t.nullable.field('publish', {
       type: 'Post',

@@ -3,22 +3,31 @@ import { objectType } from 'nexus'
 export const Post = objectType({
   name: 'Post',
   definition(t) {
-    t.model.id()
-    t.model.published()
-    t.model.title()
-    t.model.content()
-    t.model.author()
+    t.nonNull.int('id')
+    t.nonNull.boolean('published')
+    t.nonNull.string('title')
+    t.string('content')
+    t.field('author', {
+      type: 'User',
+      resolve(root, _, ctx) {
+        return ctx.prisma.post.findFirst({ where: { id: root.id } }).author()
+      },
+    })
   },
 })
 
 export const User = objectType({
   name: 'User',
   definition(t) {
-    t.model.createdAt()
-    t.model.id()
-    t.model.name()
-    t.model.email()
-    t.model.posts({ pagination: true })
+    t.nonNull.int('id')
+    t.string('name')
+    t.nonNull.string('email')
+    t.nonNull.list.field('posts', {
+      type: 'Post',
+      resolve(root, _, ctx) {
+        return ctx.prisma.user.findFirst({ where: { id: root.id } }).posts()
+      },
+    })
   },
 })
 

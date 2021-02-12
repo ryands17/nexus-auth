@@ -20,7 +20,7 @@ export const login = /* GraphQL */ `
 
 export const createDraft = /* GraphQL */ `
   mutation createDraft($title: String!, $content: String!) {
-    createDraft(data: { title: $title, content: $content }) {
+    createDraft(title: $title, content: $content) {
       title
       published
     }
@@ -28,8 +28,8 @@ export const createDraft = /* GraphQL */ `
 `
 
 export const deletePost = /* GraphQL */ `
-  mutation deletePost($where: PostWhereUniqueInput!) {
-    deletePost(where: $where) {
+  mutation deletePost($id: Int!) {
+    deletePost(id: $id) {
       id
       title
     }
