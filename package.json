@@ -17,7 +17,7 @@
     "db:migrate:prod": "yarn prisma migrate deploy --preview-feature"
   },
   "dependencies": {
-    "apollo-server": "2.19.2",
+    "apollo-server": "2.21.0",
     "bcrypt": "5.0.0",
     "dotenv": "8.2.0",
     "graphql-middleware": "6.0.4",
