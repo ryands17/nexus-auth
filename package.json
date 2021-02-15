@@ -17,9 +17,10 @@
     "db:migrate:prod": "yarn prisma migrate deploy --preview-feature"
   },
   "dependencies": {
-    "apollo-server": "2.19.2",
+    "apollo-server": "2.21.0",
     "bcrypt": "5.0.0",
     "dotenv": "8.2.0",
+    "graphql": "15.5.0",
     "graphql-middleware": "6.0.4",
     "graphql-shield": "7.5.0",
     "jsonwebtoken": "8.5.1",
@@ -42,10 +43,8 @@
     "eslint": "7.20.0",
     "eslint-config-prettier": "7.2.0",
     "graphql-request": "3.4.0",
-    "husky": "5.0.9",
     "jest": "26.6.3",
     "jest-environment-node": "26.6.2",
-    "lint-staged": "10.5.4",
     "nanoid": "3.1.20",
     "npm-run-all": "4.1.5",
     "prettier": "2.2.1",
@@ -60,14 +59,5 @@
   "prettier": {
     "semi": false,
     "singleQuote": true
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.{js,ts}": "npm run lint",
-    "*.{ts,js,json,md}": "prettier --write"
   }
 }
