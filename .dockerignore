@@ -1,5 +1,7 @@
 node_modules/
 .vscode/
 dist/
+.github/
+.husky
 
 .DS_Store

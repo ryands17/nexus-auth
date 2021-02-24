@@ -1,7 +1,7 @@
 *.db
 dist/
-src/schema.graphql
-
-node_modules
+node_modules/
 .DS_Store
-query-engine*
+.vscode/
+.github/
+.husky/

@@ -1,11 +1,10 @@
 branch-defaults:
   master:
-    environment: main
+    environment: production
 global:
   application_name: nexus-auth
   branch: master
   default_ec2_keyname: null
-  default_platform: Node.js
   default_region: ap-south-1
   include_git_submodules: true
   instance_profile: null

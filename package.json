@@ -6,7 +6,7 @@
     "dev": "cross-env NODE_ENV=development tsnd --no-notify --respawn --transpile-only ./src",
     "build": "tsc",
     "test": "dotenv -e .env.test -- jest",
-    "start": "cross-env NODE_ENV=production node dist/index.js",
+    "start": "node dist/index.js",
     "debug": "tsnd --inspect --respawn --transpile-only ./src",
     "prebuild": "run-s clean generate:*",
     "lint": "eslint 'src/**/*.{js,ts}'",
@@ -16,9 +16,10 @@
     "db:save": "yarn prisma migrate dev --create-only --preview-feature",
     "db:migrate": "yarn prisma migrate dev --preview-feature",
     "db:migrate:prod": "yarn prisma migrate deploy --preview-feature",
-    "postinstall": "husky install"
+    "postinstall": "yarn generate:prisma"
   },
   "dependencies": {
+    "@prisma/client": "2.17.0",
     "apollo-server": "2.21.0",
     "bcrypt": "5.0.0",
     "dotenv": "8.2.0",
@@ -26,10 +27,10 @@
     "graphql-middleware": "6.0.4",
     "graphql-shield": "7.5.0",
     "jsonwebtoken": "8.5.1",
-    "nexus": "1.0.0"
+    "nexus": "1.0.0",
+    "prisma": "2.17.0"
   },
   "devDependencies": {
-    "@prisma/client": "2.17.0",
     "@types/bcrypt": "3.0.0",
     "@types/dotenv": "8.2.0",
     "@types/eslint": "7.2.6",
@@ -52,7 +53,6 @@
     "nanoid": "3.1.20",
     "npm-run-all": "4.1.5",
     "prettier": "2.2.1",
-    "prisma": "2.17.0",
     "rimraf": "3.0.2",
     "ts-jest": "26.5.1",
     "ts-node": "9.1.1",
