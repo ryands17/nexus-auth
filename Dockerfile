@@ -1,4 +1,4 @@
-FROM node:14.9.0-alpine
+FROM node:14.16.0-alpine
 
 RUN apk add --no-cache --virtual .build-deps alpine-sdk python
 
@@ -13,7 +13,7 @@ COPY . .
 RUN yarn build
 
 
-FROM node:14.9.0-alpine
+FROM node:14.16.0-alpine
 
 WORKDIR /app
 
