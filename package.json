@@ -31,7 +31,7 @@
     "prisma": "2.22.1"
   },
   "devDependencies": {
-    "@types/bcrypt": "3.0.1",
+    "@types/bcrypt": "5.0.0",
     "@types/dotenv": "8.2.0",
     "@types/eslint": "7.2.10",
     "@types/jest": "26.0.23",
