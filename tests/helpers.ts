@@ -10,16 +10,15 @@ type Config = { url: string }
 export const getConfig = () => {
   let config: any = {}
 
-  beforeAll(async (done) => {
+  beforeAll(async () => {
     const { url } = await server.listen({ port: 0 })
     config.url = url
-    done()
+    return config
   })
 
-  afterAll(async (done) => {
+  afterAll(async () => {
     await server.stop()
-    await prisma.$disconnect()
-    done()
+    return prisma.$disconnect()
   })
 
   return config as Config
