@@ -4,6 +4,7 @@
 
 # nexus/prisma
 *.db
+*.db-journal
 dist/
 src/generated
 
