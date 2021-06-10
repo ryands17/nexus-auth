@@ -1,12 +1,16 @@
 import { PrismaClient } from '@prisma/client'
 import { PubSub } from 'apollo-server'
 import { sign, verify } from 'jsonwebtoken'
-import { APP_SECRET, tokens } from './constants'
+import { APP_SECRET, Errors, errors, tokens } from './constants'
 import { Context, Token } from '../types'
 
 export const handleError = (error: any) => {
   // add any other logging mechanism here e.g. Sentry
   throw error
+}
+
+export const returnError = (error: keyof Errors) => {
+  return errors[error]
 }
 
 export const generateAccessToken = (userId: number) => {

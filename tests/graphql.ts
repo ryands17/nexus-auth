@@ -1,10 +1,15 @@
 export const createUser = /* GraphQL */ `
   mutation createUser($name: String, $email: String!, $password: String!) {
     signup(name: $name, email: $email, password: $password) {
-      accessToken
-      user {
-        id
-        name
+      ... on UserAlreadyExists {
+        message
+      }
+      ... on AuthPayload {
+        accessToken
+        user {
+          id
+          name
+        }
       }
     }
   }
@@ -13,7 +18,12 @@ export const createUser = /* GraphQL */ `
 export const login = /* GraphQL */ `
   mutation login($email: String!, $password: String!) {
     login(email: $email, password: $password) {
-      accessToken
+      ... on InvalidUser {
+        message
+      }
+      ... on AuthPayload {
+        accessToken
+      }
     }
   }
 `

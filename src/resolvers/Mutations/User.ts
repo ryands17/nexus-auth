@@ -1,13 +1,12 @@
 import { stringArg, extendType, nonNull } from 'nexus'
 import { compare, hash } from 'bcrypt'
-import { generateAccessToken, handleError } from '../../utils/helpers'
-import { errors } from '../../utils/constants'
+import { generateAccessToken, returnError } from '../../utils/helpers'
 
 export const user = extendType({
   type: 'Mutation',
   definition(t) {
     t.field('signup', {
-      type: 'AuthPayload',
+      type: 'SignupResult',
       args: {
         name: stringArg(),
         email: nonNull(stringArg()),
@@ -26,17 +25,18 @@ export const user = extendType({
 
           const accessToken = generateAccessToken(user.id)
           return {
+            __typename: 'AuthPayload',
             accessToken,
             user,
           }
         } catch (e) {
-          handleError(errors.userAlreadyExists)
+          return returnError('userAlreadyExists')
         }
       },
     })
 
     t.field('login', {
-      type: 'AuthPayload',
+      type: 'LoginResult',
       args: {
         email: nonNull(stringArg()),
         password: nonNull(stringArg()),
@@ -50,16 +50,17 @@ export const user = extendType({
             },
           })
         } catch (e) {
-          handleError(errors.invalidUser)
+          return returnError('invalidUser')
         }
 
-        if (!user) handleError(errors.invalidUser)
+        if (!user) return returnError('invalidUser')
 
         const passwordValid = await compare(password, user.password)
-        if (!passwordValid) handleError(errors.invalidUser)
+        if (!passwordValid) return returnError('invalidUser')
 
         const accessToken = generateAccessToken(user.id)
         return {
+          __typename: 'AuthPayload',
           accessToken,
           user,
         }

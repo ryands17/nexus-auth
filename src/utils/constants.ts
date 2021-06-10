@@ -1,5 +1,3 @@
-import { AuthenticationError, UserInputError } from 'apollo-server'
-
 export const tokens = {
   access: {
     name: 'ACCESS_TOKEN',
@@ -12,7 +10,14 @@ export const APP_SECRET = process.env.APP_SECRET
 export const isDev = () => process.env.NODE_ENV === 'development'
 
 export const errors = {
-  notAuthenticated: new AuthenticationError('Unauthenticated user!'),
-  userAlreadyExists: new UserInputError('User already exists!'),
-  invalidUser: new UserInputError('Invalid username or password'),
+  invalidUser: {
+    __typename: 'InvalidUser',
+    message: 'Invalid username or password',
+  },
+  userAlreadyExists: {
+    __typename: 'UserAlreadyExists',
+    message: 'User already exists!',
+  },
 }
+
+export type Errors = typeof errors
