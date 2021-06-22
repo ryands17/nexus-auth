@@ -1,5 +1,5 @@
 {
-  "extends": ["config:base"],
+  "extends": ["config:base", "docker:disable"],
   "masterIssue": true,
   "automerge": true,
   "schedule": ["every weekend"],

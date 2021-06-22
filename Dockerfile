@@ -1,6 +1,6 @@
-FROM node:16.3.0-alpine
+FROM node:14-alpine3.13
 
-RUN apk add --no-cache --virtual .build-deps alpine-sdk python
+RUN apk add --no-cache --virtual .build-deps alpine-sdk python3
 
 WORKDIR /app
 
@@ -13,7 +13,7 @@ COPY . .
 RUN yarn build
 
 
-FROM node:16.3.0-alpine
+FROM node:14-alpine3.13
 
 WORKDIR /app
 
