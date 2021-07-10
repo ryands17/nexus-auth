@@ -1108,10 +1108,10 @@
   dependencies:
     dotenv "*"
 
-"@types/eslint@7.2.13":
-  version "7.2.13"
-  resolved "https://registry.yarnpkg.com/@types/eslint/-/eslint-7.2.13.tgz#e0ca7219ba5ded402062ad6f926d491ebb29dd53"
-  integrity sha512-LKmQCWAlnVHvvXq4oasNUMTJJb2GwSyTY8+1C7OH5ILR8mPLaljv1jxL1bXW3xB3jFbQxTKxJAvI8PyjB09aBg==
+"@types/eslint@7.2.14":
+  version "7.2.14"
+  resolved "https://registry.yarnpkg.com/@types/eslint/-/eslint-7.2.14.tgz#088661518db0c3c23089ab45900b99dd9214b92a"
+  integrity sha512-pESyhSbUOskqrGcaN+bCXIQDyT5zTaRWfj5ZjjSlMatgGjIn3QQPfocAu4WSabUR7CGyLZ2CQaZyISOEX7/saw==
   dependencies:
     "@types/estree" "*"
     "@types/json-schema" "*"
@@ -1220,10 +1220,10 @@
   dependencies:
     "@types/istanbul-lib-report" "*"
 
-"@types/jest@26.0.23":
-  version "26.0.23"
-  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-26.0.23.tgz#a1b7eab3c503b80451d019efb588ec63522ee4e7"
-  integrity sha512-ZHLmWMJ9jJ9PTiT58juykZpL7KjwJywFN3Rr2pTSkyQfydf/rk22yS7W8p5DaVUMQ2BQC7oYiU3FjbTM/mYrOA==
+"@types/jest@26.0.24":
+  version "26.0.24"
+  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-26.0.24.tgz#943d11976b16739185913a1936e0de0c4a7d595a"
+  integrity sha512-E/X5Vib8BWqZNRlDxj9vYXhsDwPYbPINqKF9BsnSoon4RQ0D9moEuLD8txgyypFLH7J4+Lho9Nr/c8H0Fi+17w==
   dependencies:
     jest-diff "^26.0.0"
     pretty-format "^26.0.0"
@@ -1238,10 +1238,10 @@
   resolved "https://registry.yarnpkg.com/@types/json-schema/-/json-schema-7.0.7.tgz#98a993516c859eb0d5c4c8f098317a9ea68db9ad"
   integrity sha512-cxWFQVseBm6O9Gbw1IWb8r6OS4OhSt3hPZLkFApLjM8TEXROBuQGLAH2i2gZpcXdLBIrpXuTDhH7Vbm1iXmNGA==
 
-"@types/jsonwebtoken@8.5.3":
-  version "8.5.3"
-  resolved "https://registry.yarnpkg.com/@types/jsonwebtoken/-/jsonwebtoken-8.5.3.tgz#de78585ee352593ca627c6ee4afa772bbe020fb7"
-  integrity sha512-uhZGbMfpIC/sI7ujnNdsPFMzqCYMwTBUvVsbJ6yJ+FakM7uTJKyiKaG2HXwOgy7gL+fRqnqxV82bLGmSWDxxGg==
+"@types/jsonwebtoken@8.5.4":
+  version "8.5.4"
+  resolved "https://registry.yarnpkg.com/@types/jsonwebtoken/-/jsonwebtoken-8.5.4.tgz#50ccaf0aa6f5d7b9956e70fe323b76e582991913"
+  integrity sha512-4L8msWK31oXwdtC81RmRBAULd0ShnAHjBuKT9MRQpjP0piNrZdXyTRcKY9/UIfhGeKIT4PvF5amOOUbbT/9Wpg==
   dependencies:
     "@types/node" "*"
 
@@ -1313,10 +1313,10 @@
   resolved "https://registry.yarnpkg.com/@types/parse-json/-/parse-json-4.0.0.tgz#2f8bb441434d163b35fb8ffdccd7138927ffb8c0"
   integrity sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==
 
-"@types/prettier@2.3.1":
-  version "2.3.1"
-  resolved "https://registry.yarnpkg.com/@types/prettier/-/prettier-2.3.1.tgz#54dd88bdc7f49958329666af3779561e47d5dab3"
-  integrity sha512-NVkb4p4YjI8E3O6+1m8I+8JlMpFZwfSbPGdaw0wXuyPRTEz0SLKwBUWNSO7Maoi8tQMPC8JLZNWkrcKPI7/sLA==
+"@types/prettier@2.3.2":
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/@types/prettier/-/prettier-2.3.2.tgz#fc8c2825e4ed2142473b4a81064e6e081463d1b3"
+  integrity sha512-eI5Yrz3Qv4KPUa/nSIAi0h+qX0XyewOliug5F2QAtuRg6Kjg6jfmxe1GIwoIRhZspD1A0RP8ANrPwvEXXtRFog==
 
 "@types/prettier@^2.1.5":
   version "2.2.3"
@@ -1333,10 +1333,10 @@
   resolved "https://registry.yarnpkg.com/@types/range-parser/-/range-parser-1.2.3.tgz#7ee330ba7caafb98090bece86a5ee44115904c2c"
   integrity sha512-ewFXqrQHlFsgc09MK5jP5iR7vumV/BYayNC6PgJO2LPe8vrnNFyjQjSppfEngITi0qvfKtzFvgKymGheFM9UOA==
 
-"@types/rimraf@3.0.0":
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/@types/rimraf/-/rimraf-3.0.0.tgz#b9d03f090ece263671898d57bb7bb007023ac19f"
-  integrity sha512-7WhJ0MdpFgYQPXlF4Dx+DhgvlPCfz/x5mHaeDQAKhcenvQP1KCpLQ18JklAqeGMYSAT2PxLpzd0g2/HE7fj7hQ==
+"@types/rimraf@3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@types/rimraf/-/rimraf-3.0.1.tgz#1bbc106f0978742289103e080d4b41b3b4656e58"
+  integrity sha512-CAoSlbco40aKZ0CkelBF2g3JeN6aioRaTVnqSX5pWsn/WApm6IDxI4e4tD9D0dY/meCkyyleP1IQDVN13F4maA==
   dependencies:
     "@types/glob" "*"
     "@types/node" "*"
