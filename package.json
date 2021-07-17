@@ -33,7 +33,7 @@
   "devDependencies": {
     "@types/bcrypt": "5.0.0",
     "@types/dotenv": "8.2.0",
-    "@types/eslint": "7.2.14",
+    "@types/eslint": "7.28.0",
     "@types/jest": "26.0.24",
     "@types/jsonwebtoken": "8.5.4",
     "@types/node": "15.12.1",
