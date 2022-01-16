@@ -43,7 +43,7 @@
     "@typescript-eslint/parser": "5.9.1",
     "cross-env": "7.0.3",
     "dotenv-cli": "4.1.1",
-    "eslint": "8.6.0",
+    "eslint": "8.7.0",
     "graphql-request": "3.4.0",
     "husky": "7.0.4",
     "jest": "27.4.7",
