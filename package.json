@@ -19,7 +19,7 @@
     "postinstall": "yarn generate:prisma"
   },
   "dependencies": {
-    "@prisma/client": "3.8.1",
+    "@prisma/client": "3.9.1",
     "apollo-server": "2.25.3",
     "bcrypt": "5.0.1",
     "dotenv": "14.3.2",
@@ -28,7 +28,7 @@
     "graphql-shield": "7.5.0",
     "jsonwebtoken": "8.5.1",
     "nexus": "1.2.0",
-    "prisma": "3.8.1"
+    "prisma": "3.9.1"
   },
   "devDependencies": {
     "@types/bcrypt": "5.0.0",
