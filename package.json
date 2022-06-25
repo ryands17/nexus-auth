@@ -34,7 +34,7 @@
     "@types/bcrypt": "5.0.0",
     "@types/dotenv": "8.2.0",
     "@types/eslint": "8.4.3",
-    "@types/jest": "28.1.2",
+    "@types/jest": "28.1.3",
     "@types/jsonwebtoken": "8.5.8",
     "@types/node": "16.11.41",
     "@types/prettier": "2.6.3",
