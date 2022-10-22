@@ -1343,10 +1343,10 @@
   dependencies:
     dotenv "*"
 
-"@types/eslint@8.4.6":
-  version "8.4.6"
-  resolved "https://registry.yarnpkg.com/@types/eslint/-/eslint-8.4.6.tgz#7976f054c1bccfcf514bff0564c0c41df5c08207"
-  integrity sha512-/fqTbjxyFUaYNO7VcW5g+4npmqVACz1bB7RTHYuLj+PRjw9hrCwrUXVQFpChUS0JsyEFvMZ7U/PfmvWgxJhI9g==
+"@types/eslint@8.4.7":
+  version "8.4.7"
+  resolved "https://registry.yarnpkg.com/@types/eslint/-/eslint-8.4.7.tgz#0f05a2677d1a394ff70c21a964a32d3efa05f966"
+  integrity sha512-ehM7cCt2RSFs42mb+lcmhFT9ouIlV92PuaeRGn8N8c98oMjG4Z5pJHA9b1QiCcuqnbPSHcyfiD3mlhqMaHsQIw==
   dependencies:
     "@types/estree" "*"
     "@types/json-schema" "*"
@@ -1538,10 +1538,10 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-14.11.3.tgz#e66274f2e16ea6334f4e29d364165ad079069e41"
   integrity sha512-tPQAF6b1wak7rBO49tL2N5nNVknyHBAzJVylF5rIYkfXbFkrNpbBLFMFUjxHzuuBiR7Si7T/X4eh6IRhZxO1tQ==
 
-"@types/node@16.11.66":
-  version "16.11.66"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.11.66.tgz#97f6891c3b8770e21163b93918d57fd1b799e235"
-  integrity sha512-+xvMrGl3eAygKcf5jm+4zA4tbfEgmKM9o6/glTmN0RFVdu2VuFXMYYtRmuv3zTGCgAYMnEZLde3B7BTp+Yxcig==
+"@types/node@16.11.68":
+  version "16.11.68"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.11.68.tgz#30ee923f4d940793e0380f5ce61c0bd4b7196b6c"
+  integrity sha512-JkRpuVz3xCNCWaeQ5EHLR/6woMbHZz/jZ7Kmc63AkU+1HxnoUugzSWMck7dsR4DvNYX8jp9wTi9K7WvnxOIQZQ==
 
 "@types/node@^10.1.0":
   version "10.17.21"
