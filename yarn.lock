@@ -3473,10 +3473,10 @@ graphql-extensions@^0.16.0:
     apollo-server-env "^3.2.0"
     apollo-server-types "^0.10.0"
 
-graphql-middleware@6.1.33:
-  version "6.1.33"
-  resolved "https://registry.yarnpkg.com/graphql-middleware/-/graphql-middleware-6.1.33.tgz#81bbf0eab83a2829a5d2da4e3878e9e7f3e610ed"
-  integrity sha512-5gJqTvsBlcuZEcYqWEqhF0eAHlmP3SWenX86djfdnr27UNOY74i7HR9LEUiIUnCyxdSjg1ukpwugI6CF0GX2Lw==
+graphql-middleware@6.1.34:
+  version "6.1.34"
+  resolved "https://registry.yarnpkg.com/graphql-middleware/-/graphql-middleware-6.1.34.tgz#3aec5a294d54b57663ad1d8a14253498fa35d3ab"
+  integrity sha512-cnX6vEQVmfJRUZcek6BaVLA2cD8826WyMskZRiLKNZFxCMPJpwi5MCH86BnmFXtWYeYHO4MwnCcfmKdRKOh0ow==
   dependencies:
     "@graphql-tools/delegate" "^8.8.1"
     "@graphql-tools/schema" "^8.5.1"
