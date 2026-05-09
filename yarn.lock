@@ -3553,10 +3553,10 @@ graphql-tools@^4.0.8:
     iterall "^1.1.3"
     uuid "^3.1.0"
 
-graphql@15.10.1:
-  version "15.10.1"
-  resolved "https://registry.yarnpkg.com/graphql/-/graphql-15.10.1.tgz#e9ff3bb928749275477f748b14aa5c30dcad6f2f"
-  integrity sha512-BL/Xd/T9baO6NFzoMpiMD7YUZ62R6viR5tp/MULVEnbYJXZA//kRNW7J0j1w/wXArgL0sCxhDfK5dczSKn3+cg==
+graphql@15.10.2:
+  version "15.10.2"
+  resolved "https://registry.yarnpkg.com/graphql/-/graphql-15.10.2.tgz#f57f8665cea9e77a80264d7eeb0d687079714e78"
+  integrity sha512-1PRqdDPAmViWr4h1GVBT8RoPZfWSGZa7kDzleTilOfVIslsgf+cia3Nl95v1KDmR4iERPaT7WzQ+tN4MJmbg3w==
 
 has-flag@^3.0.0:
   version "3.0.0"
