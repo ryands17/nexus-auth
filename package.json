@@ -45,7 +45,7 @@
     "dotenv-cli": "8.0.0",
     "eslint": "8.57.1",
     "graphql-request": "3.4.0",
-    "husky": "7.0.4",
+    "husky": "9.1.7",
     "jest": "27.5.1",
     "jest-environment-node": "27.5.1",
     "lint-staged": "12.5.0",
